@@ -20,8 +20,8 @@ def lipa_na_mpesa(phone_number, amount):
     "PartyA": phone_number,
     "PartyB": keys.business_short_code,
     "PhoneNumber": phone_number,
-    "CallBackURL": "https://emmicode.pythonanywhere.com/api/payments/lnm/",
-    "AccountReference": "Worksite",
+    "CallBackURL": "https://josephine.pythonanywhere.com/api/payments/lnm/",
+    "AccountReference": "Hyplex",
     "TransactionDesc": "Pay for a job"
     }
 
