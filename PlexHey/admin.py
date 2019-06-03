@@ -5,6 +5,7 @@ from django.contrib.auth.models import User, Group
 import csv
 from django.http import HttpResponse
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from mpesa.models import LNMonline
 
 
 
@@ -108,6 +109,7 @@ admin.site.register(make1, make1Admin)
 # model admin
 
 
+
 class model1Admin(admin.ModelAdmin, ExportCsvMixin):
    list_display = [ 'car_model' , 'car_make', 'car_price', 'car_image', 'car_capacity','model_year','fuel_type', 'created_at', 'updated_at' ]
    list_filter = ['created_at']
@@ -152,4 +154,12 @@ class bookingAdmin(admin.ModelAdmin, ExportCsvMixin ):
         return False
 
 
+class LNMonlineAdmin(admin.ModelAdmin):
+
+    date_hierarchy = 'Transaction_Date'
+    list_display = ['Phone_Number', 'Mpesa_Receipt_Number', 'Amount', 'Transaction_Date',]
+    list_filter = ['Transaction_Date']
+
+
 admin.site.register(booking,bookingAdmin)
+admin.site.register(LNMonline,LNMonlineAdmin)
