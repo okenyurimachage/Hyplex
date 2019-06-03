@@ -11,6 +11,7 @@ from django.shortcuts import render
 from .filters import UserFilter
 from django.shortcuts import render
 
+from mpesa.implementation.lipanampesa import lipa_na_mpesa
 from .documents import PostDocument
 
 
@@ -256,6 +257,9 @@ def bookings(request):
     pickupdate = request.POST['pickupdate']
     days = request.POST['days']
     user = request.POST['user']
+    amount = 1
+    lipa_na_mpesa(phonenumber,amount)
+
 
     add1 = booking(fullname=fullname,phonenumber=phonenumber,car_make1=car_make1,car_model1=car_model1,
                    pickupdate=pickupdate,days=days,user=user)
