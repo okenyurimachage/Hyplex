@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      {% load static %}
+    <meta charset="utf-8">
+
+    <title>HeyPlex Vehicle Rental</title>
+    <link rel="icon" href="{%  static 'assets/images/pic2.png' %}" type="image/png" sizes="16x16">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="HeyPlex Vehicle Rental">
+    <meta name="keywords" content="HeyPlex Vehicle Rental">
+    <link href="{%  static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all" />
+      <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Nunito" rel="stylesheet">
+{#    <link href="https://fonts.googleapis.com/css?family=Arimo:300,400,500,600,700%7CRoboto%7CJosefin+Sans:100,300,400,500" rel="stylesheet" type="text/css">#}
+    <link rel="stylesheet" href="{%  static 'assets/css/animate.css' %}"> <!-- Resource style -->
+    <link rel="stylesheet" href="{%  static 'assets/css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{%  static 'assets/css/owl.theme.css' %}">
+      <link rel="stylesheet" href="{%  static 'ionicons/css/ionicons.min.css' %}"/>
+    <link href="{% static 'assets/css/style.css ' %}" rel="stylesheet" type="text/css" media="all" />
+  </head>
+  <body>
+    <div class="wrapper">
+        <div class="container">
+          <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+
+          <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+              <a class="navbar-brand page-scroll" href=" "><img src="{%  static 'assets/images/pic2.png' %}" width="40" height="40" alt="HeyPlex" style="font-family: 'Nunito', sans-serif"/>HeyPlex</a>
+              </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li style="font-family: 'Nunito', sans-serif"><a class="page-scroll" href="#main">Home</a></li>
+                    <li style="font-family: 'Nunito', sans-serif"><a class="page-scroll" href="#features">Offers</a></li>
+                    <li style="font-family: 'Nunito', sans-serif"><a class="page-scroll" href="#review-section">Reviews</a></li>
+                    <li style="font-family: 'Nunito', sans-serif"><a class="page-scroll" href="#terms">Rental Terms</a></li>
+                    <li style="font-family: 'Nunito', sans-serif"><a class="page-scroll" href="#contact">Contact</a></li>
+                    <li style="font-family: 'Nunito', sans-serif" class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Book now
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a  class="dropdown-item" href="{% url 'login' %}">Log in</a><br><br>
+                          <a class="dropdown-item" href="{% url 'signup' %}">Sign up</a>
+                        </div>
+                      </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="main product" id="main">
+      <div class="hero-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <img class="img-responsive wow fadeInLeft" src="{%  static 'assets/images/Car19.png' %}" alt="HeyPlex" />
+            </div>
+            <div class="col-md-6">
+              <div class="hero-content">
+                <h1 class="wow fadeInUp" data-wow-delay="0.1s" style="font-family: 'Nunito', sans-serif">HeyPlex Vehicle Rental</h1>
+                <p class="wow fadeInUp" data-wow-delay="0.2s" style="font-family: 'Nanum Gothic'; line-height: 35px; font-weight: 300; font-size: 16px" >Enjoy fast and Easy vehicle reservation with HeyPlex.No need to strain your budget for we
+                  offer low rental prices for our variety of vehicles.You can also track your rental plan with us and leave your remarks about the services we offer.</p>
+            </div>
+            <br>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about text-center">
+        <div class="container">
+          <div class="about-content">
+            <h2 class="wow fadeInUp" data-wow-delay="0.2s">"The vehicle you drive says a lot about you.Let us help you select that vehicle you need to
+                suit every purse and purpose"
+            </h2>
+            <h3 class="wow fadeInUp" data-wow-delay="0.3s">- CEO, HeyPlex</h3>
+          </div>
+        </div>
+      </div>
+
+      <div id="features" class="features">
+       <div class="container">
+         <div class="features-inner">
+           <div class="row">
+             <div class="col-md-6">
+               <img class="img-responsive wow fadeInLeftBig" data-wow-delay="0.2s" src="{%  static 'assets/images/car15.png' %}" alt="HeyPlex" />
+             </div>
+             <div class="col-md-6">
+               <div class="features-list">
+                 <h1 style="font-size: 27px" class="wow fadeInUp" data-wow-delay="0.2s">Our special offers</h1>
+                 <ul class="wow fadeInUp" data-wow-delay="0.3s">
+                   <li>Variety of vehicle models to choose from</li>
+                   <li>Low renting rates</li>
+                   <li>24/7 booking services</li>
+                   <li>Insurances and taxes are catered for</li>
+                   <li>No hidden costs</li>
+                   <li>Five star rated services</li>
+                 </ul>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+        <div id="review-section" class="review-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+                <div class="reviews owl-carousel owl-theme">
+                  <div class="review-single"><img class="img-circle" src="{%  static 'assets/images/wo2.jpg' %}" alt="Client Testimonial" />
+                    <div class="review-text wow fadeInDown" data-wow-delay="0.2s">
+                      <p>Easy to use system to get great price on rental cars. I've used it for 6 trips, no issues in booking, picking up or returning car.
+                          The price quoted is always what I pay.
+                          Highly recommend using HeyPlex if you need to rent a car for a day or weeks.</p>
+                      <h3>- Hanifa Kut</h3>
+                      <h3>Kiamunyi Resident</h3>
+                      <i class="ion ion-star"></i>
+                      <i class="ion ion-star"></i>
+                      <i class="ion ion-star"></i>
+                      <i class="ion ion-star"></i>
+                      <i class="ion ion-star"></i>
+                    </div>
+                  </div>
+                  <div class="review-single"><img class="img-circle" src="{%  static 'assets/images/ma.png' %}" alt="Client Testimonial" />
+                    <div class="review-text">
+                      <p>Saved me a lot of money when I first booked through them. They came back a few weeks later with more savings from the same rental company.
+                          I wish I had found HeyPlex years ago.</p>
+                      <h3>- Omar Bashir</h3>
+                      <h3>Pipeline Resident</h3>
+                      <i class="ion ion-star"></i>
+                      <i class="ion ion-star"></i>
+                      <i class="ion ion-star"></i>
+                      <i class="ion ion-star"></i>
+                      <i class="ion ion-ios-star-half"></i>
+                    </div>
+                  </div>
+                  <div class="review-single"><img class="img-circle" src="{%  static 'assets/images/wo4.jpg' %}" alt="Client Testimonial" />
+                    <div class="review-text">
+                      <p>We have a large family of 7. Rental cars to accommodate us are very expensive and put a big dent in our vacation savings.
+                          I was pleasantly surprised to find a deal for a caravan for over twenty thousand shillings less on your site.
+                          I must admit, I was so nervous when we went to pick up the car, hoping that are pre-paid reservation was legit.
+                          IT WAS!!! Thank you HeyPlex!!!</p>
+                      <h3>- Alice Wambui</h3>
+                      <h3>Eveready Resident</h3>
+                      <i class="ion ion-star"></i>
+                      <i class="ion ion-star"></i>
+                      <i class="ion ion-star"></i>
+                      <i class="ion ion-star"></i>
+                      <i class="ion ion-ios-star-half"></i>
+                    </div>
+                  </div>
+                  <div class="review-single"><img class="img-circle" src="{%  static 'assets/images/ma2.jpg' %}" alt="Client Testimonial" />
+                    <div class="review-text">
+                      <p>I rent cars frequently and always save with HeyPlex. Not only do they save me bunches, everyone is so kind and helpful.
+                          I often have specific requests.
+                          HeyPlex is always able to help. Just ask and you will be respectfully helped. HeyPlex is the best!!!!!</p>
+                      <h3>- Robert Ochieng</h3>
+                      <h3>Lanet Resident</h3>
+                      <i class="ion ion-star"></i>
+                      <i class="ion ion-star"></i>
+                      <i class="ion ion-star"></i>
+                      <i class="ion ion-star"></i>
+                      <i class="ion ion-star"></i>
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <div id="terms" class="features">
+       <div class="container">
+         <div class="features-list">
+           <div class="row">
+             <div class="col-md-6">
+                 <h1 class="wow fadeInUp" data-wow-delay="0.2s" style="font-size:40px; font-family: 'Nunito'; "><u>Our Rental Terms</u></h1><br>
+                 <ol class="wow fadeInUp" data-wow-delay="0.4s">
+                     <li style="font-family: 'Nunito', sans-serif" >BOOKING</li>
+                    <p  style="line-height: 29px ; font-family: 'Nanum Gothic'; font-weight: 300" >A client can book more than one vehicle before the pickup date.After the pickup date he/she
+                        must return the lended vehicle before booking another one.</p><br>
+
+                <li style="font-family: 'Nunito', sans-serif">DRIVING LICENSE</li>
+                   <p style="line-height: 29px ; font-family: 'Nanum Gothic'; font-weight: 300"> A client must have a valid driving license.He/She must be over 21 years old.
+                       The client must also have a identification card.</p><br>
+                   <li style="font-family: 'Nunito', sans-serif">RENTAL AGREEMENT</li>
+                    <p style="line-height: 29px ; font-family: 'Nanum Gothic'; font-weight: 300"> In order to check out the rental vehicle, the rental agreement mst be signed time of pickup.The contract is offered
+                     both in English and Kiswahili.This contract deals with essential information such as the xar type, rental period,
+                        insurance coverage etc.</p><br>
+                    <li style="font-family: 'Nunito', sans-serif">CANCELLATION</li>
+                     <p style="line-height: 29px ; font-family: 'Nanum Gothic'; font-weight: 300">A client cannot cancel the reserved vehicle after making the first deposit.</p><br>
+                 </ol>
+
+             </div>
+             <div class="col-md-6">
+              <div class="features-list">
+
+                 <ol class="wow fadeInUp" data-wow-delay="0.4s">
+                     <li style="font-family: 'Nunito', sans-serif">DEPOSIT</li>
+                    <p style="line-height: 29px ; font-family: 'Nanum Gothic'; font-weight: 300">A client must deposit 50% of the amount of money needed to hire a vehicle for the specified number of days.
+                    The remaining amount will be paid when acquiring the vehicle in our offices.
+                        All payments are done through MPesa.</p><br>
+                <li style="font-family: 'Nunito', sans-serif">FUEL</li>
+                     <p style="line-height: 29px; font-family: 'Nanum Gothic'; font-weight: 300" >Renting costs do not include fuel</p><br>
+
+                <li style="font-family: 'Nunito', sans-serif">INSURANCE</li>
+                   <p style="line-height: 29px; font-family: 'Nanum Gothic'; font-weight: 300" > All vehicles are insured but any irresponsible damage e.g. loss of vehicle properties will be catered by the client.
+                    The client must take care of the vehicle to avoid theft.If the vehicle is stolen, He/She will cater for all the expenses
+                       required to track the vehicle</p><br>
+
+                 </ol>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+      <div  id="contact" class="terms">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="terms-content">
+
+
+<h1 style="font-family: 'Nunito', sans-serif" class="wow fadeInLeft" data-wow-delay="0.2s"><u>We value your feedback</u></h1><br>
+<div class="card" style=" width: 18rem;font-family: 'Nanum Gothic', sans-serif" >
+    <div class="card-body" style=" font-family: 'Nanum Gothic', sans-serif">
+                  <form method="POST" action="{% url 'add_feedback_submission' %}" class="wow fadeInLeft" data-wow-delay="0.4s" style="width: 500px; font-family: Poppins ">
+                      {% csrf_token %}
+
+{#                      <label for="exampleInputEmail1" style=" font-family: 'Nanum Gothic', sans-serif">Name:</label>#}
+   <input style=" font-family: 'Nanum Gothic', sans-serif" type="textfield" class="form-control"  name="username"  id="exampleInputUsername" placeholder="Enter Your Name"><br>
+{#                      <label for="exampleInputEmail1">Email Address</label>#}
+   <input style=" font-family: 'Nanum Gothic', sans-serif" type="email" class="form-control"  name="email"  id="exampleInputEmail1" placeholder="Enter Your Email"><br>
+{#                      <label for="Category-select">Subject</label><br>#}
+                      <select  style="width: 500px; font-family: 'Nanum Gothic', sans-serif"  class="form-control" name="category">
+        <option value="" selected disabled >Choose the feedback type</option>
+        <option value="Feedback" >General Feedback</option>
+        <option value="Perfomance" >Performance</option>
+        <option value="Software/Hardware Compatipility" >Software/Hardware Compatipility</option>
+        <option value="Report a bug">Report a bug</option>
+        <option value="Feature request">Feature request</option>
+        <option value="Any other">Any other</option>
+    </select><br><br>
+{#   <input type="textfield" class="form-control"  name="username"  id="exampleInputUsername" placeholder="Enter Username"><br><br>#}
+{#                      <label for="exampleInputEmail1">Your Message</label>#}
+{#           <div class="form-group">#}
+        <textarea style=" font-family: 'Nanum Gothic', sans-serif" name="message" class="form-control"  id="exampleFormControlTextarea2" rows="3" placeholder="Write your message"></textarea>
+{#    </div>#}
+                      <br>
+
+                      <button class="btn btn-info btn-block my-4" type="submit" style="width: 500px ;font-family: 'Nanum Gothic' ">Send</button>
+                  </form>
+</div>
+</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <img class="img-responsive wow fadeInRight" data-wow-delay="0.3s" src="{%  static 'assets/images/car22.png' %}" alt="HeyPlex" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Footer Section -->
+        <div class="footer"  class="contact text-center">
+            <div class="container">
+            <div style="margin-left: 400px; line-height: 40px; font-family: Poppins; font-size: 16px">
+            <h1 style="font-size: 26px; font-family: 'Nunito', sans-serif" class="wow fadeInUp" data-wow-delay="0.1s" style="font-size: 26px;"><u>ADDRESS</u></h1>
+                 <div  style=" font-family: 'Nanum Gothic', sans-serif" class="wow fadeInUp" data-wow-delay="0.2s">
+                   <i  class="ion ion-home"></i>  P.O BOX 456-20100 Nakuru,Kenya<br>
+                      <i class="ion ion-email"></i> HeyPlexClientCare@gmail.com<br>
+                      <i class="ion ion-android-phone-portrait"></i> +254 702 646 220<br>
+                      <i class="ion ion-printer"></i> +254 020 400 345<br>
+
+                 </div>
+            </div>
+                <hr style="display: block; margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 1px; " >
+                <div style=" font-family: 'Nanum Gothic', sans-serif" class="wow fadeInRightBig footer2" data-wow-delay="0.3s">
+                    Copyright © 2019 HeyPlex Vehicle Rental. All Rights Reserved.
+
+
+                   <i  style=" margin-left: 400px; padding: 10px" class="ion ion-social-facebook"></i>
+                      <i style=" padding: 10px" class="ion ion-social-instagram"></i>
+                      <i style=" padding: 10px" class="ion ion-social-googleplus"></i>
+                      <i style=" padding: 10px" class="ion ion-social-twitter"></i>
+                      <i style=" padding: 15px" class="ion ion-social-linkedin"></i>
+
+                </div>
+        </div>
+      </div>
+        <!-- Scroll To Top Ends-->
+
+<a id="back-top" class="back-to-top page-scroll" href="#main">
+          <i class="ion-ios-arrow-thin-up"></i>
+          </a>
+
+
+    </div><!-- Main Section -->
+  </div><!-- Wrapper-->
+
+<!-- Jquery and Js Plugins -->
+  <script type="text/javascript" src="{%  static 'assets/js/jquery-2.1.1.js' %}"></script>
+  <script type="text/javascript" src="{%  static 'assets/js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src="{%  static 'assets/js/plugins.js' %}"></script>
+  <script type="text/javascript" src="{%  static 'assets/js/menu.js' %}"></script>
+  <script type="text/javascript" src="{%  static 'assets/js/custom.js' %}"></script>
+
+  <!-- WhatsHelp.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            whatsapp: "+254786697085", // WhatsApp number
+            call_to_action: "talk to us", // Call to action
+            position: "left", // Position may be 'right' or 'left'
+        };
+        var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /WhatsHelp.io widget -->
+  </body>
+</html>

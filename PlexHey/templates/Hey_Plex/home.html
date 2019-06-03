@@ -1,0 +1,131 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <title>HeyPlex</title>
+
+        <!-- Include css files to support mdl -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.light_blue-blue.min.css"> -->
+        <link rel="stylesheet" href="{%  static 'SideNav/css/material.light_blue-blue.min.css' %}">
+
+        <!-- Bootstrap CSS -->
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+            crossorigin="anonymous"> -->
+            <link rel="stylesheet" href="{%  static 'SideNav/css/bootstrap.min.css' %}" >
+
+        <!--   Font awaesome -->
+        <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+            crossorigin="anonymous"> -->
+            <link rel="stylesheet" href="{% static 'SideNav/css/font-awesome.min.css' %}" >
+         <link rel="stylesheet" href="{%  static 'assets/css/animate.css' %}"> <!-- Resource style -->
+    <link rel="stylesheet" href="{%  static 'assets/css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{%  static 'assets/css/owl.theme.css' %}">
+          <link rel="stylesheet" href="{%  static 'ionicons/css/ionicons.min.css' %}"/>
+
+    </head>
+
+    <body>
+
+        <div style="background: whitesmoke" class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+
+            <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+                <div class="mdl-layout__header-row">
+                    <span class="mdl-layout-title font-weight-bold wow fadeInRight" style="color: black; font-size: 24px;">Welcome {{ user.username }}</span>
+                    <div class="mdl-layout-spacer"></div>
+
+
+                    <span class="mdl-layout-title change"><a class=" nav-link text-dark h5" href="{% url 'logout' %}">Log Out</a></span>
+                </div>
+            </header>
+
+            <div style="background: whitesmoke; width: 280px" class="demo-drawer mdl-layout__drawer ">
+                <header class="demo-drawer-header">
+                    <span>  <a  class=" nav-link text-center font-weight-bold" style=" color:black; font-size: 18px"> <img src="{%  static 'images/pic2.png' %}" height="45" >HEYPLEX</a></span>
+                    <br>
+                    <br>
+                </header>
+
+                <nav style="background: whitesmoke; font-family: 'Josefin Sans'" class="demo-navigation mdl-navigation ">
+                    <ul style="list-style: none;  font-size: 18px; line-height: 28px; font-family: 'Josefin Sans" id="navmenu">
+
+                        <li><a class="ion ion-android-car"  style="font-family: 'Josefin Sans'; color: black" href="#">Vehicles</a><span ></span>
+                            <hr>
+                            <ul style="background: whitesmoke; list-style: none; font-size: 18px; line-height: 34px; " >
+                                <li style="color: black"><a  href="#">Pending</a></li>
+                                <li><a href="#">Approved</a></li>
+                                <li><a href="#">Pending</a></li>
+                                <li><a href="#">Approved</a></li>
+                                <li><a href="#">Pending</a></li>
+                                <li><a href="#">Approved</a></li>
+                                <li><a href="#">Pending</a></li>
+                                <li><a href="#">Approved</a></li>
+                            </ul>
+                        </li>
+                        <hr>
+
+                          <li><a class="ion ion-android-calendar"  style="font-family: 'Josefin Sans'; color: black " href="#">My Bookings</a></li>
+                        <hr>
+                        <li><a class="ion ion-person" style="font-family: 'Josefin Sans'; color: black" href="{% url 'edit_profile' %}">My account</a></li>
+                        <hr>
+                        <li><a class="ion ion-locked"  style="font-family: 'Josefin Sans'; color: black" href="{% url 'change_password' %}">Change Password</a></li>
+                        <hr>
+                    </ul>
+                </nav>
+            </div>
+
+
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+{% block content %}
+
+
+
+
+        {% endblock %}
+<!-- Jquery and Js Plugins -->
+  <script type="text/javascript" src="{%  static 'assets/js/jquery-2.1.1.js' %}"></script>
+  <script type="text/javascript" src="{%  static 'assets/js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src="{%  static 'assets/js/plugins.js' %}"></script>
+  <script type="text/javascript" src="{%  static 'assets/js/menu.js' %}"></script>
+  <script type="text/javascript" src="{%  static 'assets/js/custom.js' %}"></script>
+
+        <!-- <script src="https://code.getmdl.io/1.3.0/material.min.js"></script> -->
+        <script src="{% static 'SideNav/js/material.min.js' %}" ></script>
+
+        <!-- Optional JavaScript -->
+        <!-- Custom javascript -->
+        <script src=" {% static 'SideNav/js/main.js' %} "></script>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script> -->
+            <script src="{% static 'SideNav/js/jquery-3.3.1.slim.min.js'%}"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script> -->
+            <script src="{% static 'SideNav/js/popper.min.js' %}" ></script>
+        <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script> -->
+        <script type="text/javascript" src="{% static 'SideNav/js/bootstrap.min.js' %}"></script>
+
+
+    </body>
+
+</html>
+
+
+
+
+
+

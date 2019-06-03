@@ -1,0 +1,318 @@
+
+ {% extends 'Hey_Plex/base.html' %}
+{% load static %}
+    <title>Coupe Cars</title>
+</head>
+<body class="container">
+
+
+{% block content %}
+
+<style>
+.product-listing-m {
+  margin:0 auto 40px;
+  overflow: hidden;
+}
+.product-listing-img {
+  float: left;
+  width: 45%;
+  position:relative;
+  overflow:hidden;
+}
+.product-listing-content {
+  float: left;
+  padding:20px 15px 20px 30px;
+  width: 55%;
+}
+.product-listing-content h5 {
+  margin-bottom: 2px;
+}
+.product-listing-content h5 a {
+	color:#111;
+}
+.product-listing-content ul {
+  margin: 0 auto 22px;
+  overflow: hidden;
+  padding: 0;
+}
+.product-listing-content li {
+  float: left;
+  font-size: 13px;
+  font-weight: 400;
+  list-style: outside none none;
+  margin: 0 auto;
+  width: 33%;
+}
+.product-listing-content li .fa {
+  font-size: 15px;
+  margin-right: 8px;
+}
+
+body {
+  background: #F1F3FA;
+}
+
+/* Profile container */
+.profile {
+  margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+    text-transform: capitalize;
+  color: #5a7391;
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: capitalize;
+  color: #5b9bd1;
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
+}
+.navi {
+  {#text-align: center;#}
+  font-weight: 600;
+}
+
+.navi * {
+  box-sizing: border-box;
+  transition: all .35s ease;
+}
+
+.navi li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: .5em 1em;
+  paddin: 0;
+}
+
+.navi a {
+  padding: .5em .8em;
+  position: relative;
+  text-decoration: none;
+}
+
+.navi a::before,
+.navi a::after {
+  content: '';
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  transition: all .35s ease;
+  opacity: 0;
+}
+
+.navi a::before {
+  content: '';
+  right: 0;
+  top: 0;
+  border-top: 3px solid #3E8914;
+  border-right: 3px solid #2E640F;
+  transform: translate(-100%, 50%);
+}
+
+.navi a:after {
+  content: '';
+  left: 0;
+  bottom: 0;
+  border-bottom: 3px solid #2E640F;
+  border-left: 3px solid #3E8914;
+  transform: translate(100%, -50%)
+}
+
+.navi a:hover:before,
+.navi a:hover:after{
+  transform: translate(0,0);
+  opacity: 1;
+}
+
+.navi a:hover {
+  color: black;
+
+}
+</style>
+    <div class="container-fluid">
+<div class="row profile">
+<div class=" col-md-3">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<img class=" rounded-circle img-fluid " style=" margin-left:100px; width:160px; height:160px;" src="{%  static 'images/car4.png' %}" class="img-responsive" alt="">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div style="font-family: Nunito" class="profile-usertitle-name">
+						{{ user.first_name }} {{ user.last_name }}
+					</div>
+					<div style="font-family: Nunito" class="profile-usertitle-job">
+						Customer
+					</div>
+				</div>
+
+				<div class="">
+					<ul class="navi" style="list-style: none; ">
+						<li style=" padding:10px 15px;font-size: 17px; font-family: Nunito">
+							<a href="{% url 'ShowCase' %}">
+							<i class="fas fa-home prefix " ></i>
+							Home </a>
+						</li>
+						<li style=" padding:10px 15px; font-size: 17px;font-family: Nunito">
+							<a href="{% url 'edit_profile' %}">
+							<i class="fas fa-user prefix " ></i>
+							My Account </a>
+						</li>
+						<li style=" padding:10px 15px; font-size: 17px;font-family: Nunito">
+							<a href="{% url 'bookingtable' %}">
+							<i class="fas fa-calendar prefix " ></i>
+							My Bookings </a>
+						</li >
+						<li style=" padding:10px 15px; font-size: 17px;font-family: Nunito">
+							<a href="{% url 'change_password' %}">
+							<i class="fas fa-lock prefix " ></i>
+							Change Password </a>
+						</li>
+                        <li style=" padding:10px 15px; font-size: 17px;font-family: Nunito">
+							<a href="{% url 'logout' %}">
+							<i class="fas fa-sign-out-alt prefix " ></i>
+							Logout </a>
+						</li>
+					</ul>
+				</div>
+				<!-- END MENU -->
+
+			</div>
+		</div>
+<div class="col-md-9">
+<div class="profile-content">
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb ">
+      <li class="breadcrumb-item"><a class="black-text" href="{% url 'ShowCase' %}">Home</a><i class="fas fa-angle-double-right mx-2"
+          aria-hidden="true"></i></li>
+    </ol>
+  </nav>
+
+<ul>
+{% for ha in hatchback %}
+
+<div class="card" style="width: 1000px; height: 280px;" >
+
+   <!-- Card content -->
+  <div class="card-body">
+   <div class="product-listing-m gray-bg">
+          <div class="product-listing-img" style="width: 300px ; height: 200px"><img src="{{ ha.car_image.url }}" class="img-responsive" alt="Image" /> </a>
+          </div>
+          <div class="product-listing-content">
+              <h4><b>{{ ha.car_model }}</b></h4>
+            <p class="list-price">Kshs {{ ha.car_price }} Per Day</p>
+            <ul>
+                <li><i class="fa fa-calendar" aria-hidden="true"></i> {{ ha.model_year}} model</li>
+              <li><i class="fa fa-user" aria-hidden="true"></i> {{ ha.car_capacity }} seats</li>
+              <li><i class="fa fa-car" aria-hidden="true"></i> {{ ha.fuel_type}} </li>
+
+            </ul>
+            <a href="{% url 'details1' ha.id %}" style="margin-left: 300px" class="btn btn-info">Book Now <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
+          </div>
+        </div>
+  </div>
+
+</div>
+    <br>
+{% endfor %}
+
+</ul>
+</div>
+</div>
+</div>
+<br>
+    <br>
+    <br>
+    <br>
+
+{% endblock %}
+
+</body>
+</html>

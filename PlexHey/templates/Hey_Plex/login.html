@@ -1,0 +1,88 @@
+
+
+{% extends 'Hey_Plex/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <!-- Compiled and minified CSS -->
+<body >
+
+<style>
+.me {background-color: white; color: #4abde8;border-radius: 12px;text-transform: capitalize;}
+.mimi {border-radius: 14px;text-transform: capitalize;font-family: Nunito}
+.may{border-radius: 50%}
+.input-group.md-form.form-sm.form-3 input {
+    border: 1px solid #bdbdbd;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+.input-group.md-form.form-sm.form-3 input[type=text]:focus:not([readonly]).amber-border  {
+    border: 1px solid #ffca28;
+    box-shadow: none;
+}
+</style>
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">#}
+
+    <!-- Compiled and minified JavaScript -->
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>#}
+    <br>
+    <br>
+ <div class="row">
+    <div class="col-md-6">
+         <p class="font-weight-bold animated fadeInLeft " style="font-size: 45px; font-family: 'Nunito'; margin-left:280px;">Log into your HeyPlex Account  </p>
+        <p style="font-family: 'Nanum Gothic'; font-size: 20px;margin-left:280px;" class="font-weight-light animated fadeInLeft ">Choose us to help you find your dream car</p>
+        <img style="margin-left:180px; width: 450px " class="img-responsive animated fadeInLeft delay-1s" src="{%  static 'images/login.png' %}" alt="HeyPlex" />
+    </div>
+             <div class="col-md-6">
+{#    <!-- Material form login -->#}
+<div>
+    <p class="animated wow fadeInLeft delay-2s" style="font-family: 'Nanum Gothic'; margin-left: 260px">Don't have an account?<a href="{% url 'signup' %}" class="me btn">Create Profile</a>
+    </p>
+
+</div>
+    <form method="post" class=" animated  wow slideInRight border border-white " style="width: 530px; color: #757575;">
+{% csrf_token %}
+
+<div style="margin-top: 80px">
+
+
+      <div class="md-form">
+        <i class="fas fa-user prefix " style="font-size: 20px;"></i>
+        <input type="text" name="username" class="form-control" required>
+        <label for="form104" style="font-family: Nunito">Username</label>
+      </div>
+
+      <div class="md-form">
+        <i class="fas fa-lock-open prefix " style="font-size: 20px;"></i>
+        <input type="password" name="password" class="form-control" required>
+        <label for="form105" style="font-family: Nunito">Password</label>
+      </div>
+<br>
+    <button style="margin-left: 250px" class="btn btn-info mimi" type="submit">Login<i class="fas fa-sign-in-alt ml-1"></i></button>
+    <div>
+          <!-- Forgot password -->
+          <a style="margin-left: 260px; font-size: 13px; font-family: 'Nunito' " href="{% url 'password_reset' %}">Forgot password?</a>
+        </div>
+<br>
+     <div style="margin-left: 160px">
+         <!--Twitter-->
+<a style="background-color: #55acee; color: white;border-radius: 50%; margin:21px;" class="may btn-floating btn-lg " ><i class="fab fa-twitter"></i></a>
+<!--Twitter-->
+<a style="background-color: #111e6c; color: white;border-radius: 50%; margin:21px;" class="may btn-floating btn-lg " ><i class="fab fa-linkedin-in"></i></a>
+<!--Twitter-->
+<a style="background-color: antiquewhite; color: red;border-radius: 50%; margin:21px;" class="may btn-floating btn-lg " ><i class="fab fa-google"></i></a>
+     </div>
+</div>
+    </form>
+             </div>
+ </div>
+    <br>
+    <br>
+<br>
+
+
+{% endblock %}
+</body>
+
+</html>

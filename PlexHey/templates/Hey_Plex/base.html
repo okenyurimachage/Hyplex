@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %}
+
+    <meta charset="UTF-8">
+    <title style="font-family: Nunito">HeyPlex Vehicle Rental</title>
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+{#     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto%7CJosefin+Sans:100,300,400,500" rel="stylesheet" type="text/css">#}
+
+    <link rel="stylesheet" href="{%  static 'MDB1/css/bootstrap.min.css' %}" type="text/css"/>
+
+    <link rel="stylesheet" href="{%  static 'MDB1/css/mdb.min.css' %}" type="text/css"/>
+
+
+</head>
+
+<body >
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar ">
+        <a class="navbar-brand font-weight-bold" style="font-family: 'Nunito';">
+    <img src="{%  static 'images/pic2.png' %}" height="30" class="d-inline-block align-top"
+      alt="HeyPLex logo"> HeyPlex
+  </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul    class="navbar-nav ml-auto">
+
+                  {% if user.is_authenticated %}
+
+                      <li style="font-size:15px;margin-right: 15px" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle font-weight-bold" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false" style="color: black; font-size:16px;font-family: 'Nunito'">Need help?</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item " style="padding:1px 4px; color: black; font-size:13px;font-family: 'Nunito'">Contact us<br>+254702646220</a>
+                      <a class="dropdown-item  " href="#" style="padding:1px 4px;  color: black; font-size:15px;font-family: 'Nunito'">How to book?</a>
+                      <a class="dropdown-item  " href="#" style="padding:1px 4px; color: black; font-size:15px;font-family: 'Nunito'">Payment Policy</a>
+                        <a class="dropdown-item " href="#" style="padding:1px 4px; color: black; font-size:15px;font-family: 'Nunito'">Rental Terms</a>
+                        <a class="dropdown-item  " href="#" style="padding:1px 4px; color: black; font-size:15px;font-family: 'Nunito'">Send feedback</a>
+                         </div>
+                  </li>
+
+             {% else %}
+                      <li  class="nav-item">
+                    <a class="nav-link font-weight-bold" href="{% url 'details' %}" style="color: black; font-size:18px;font-family: 'Nunito'">Home</a>
+                </li>
+                <li  class="nav-item">
+                    <a class="nav-link font-weight-bold" href="{% url 'login' %}" style="color: black; font-size:18px; font-family: 'Nunito'">Login</a>
+                </li>
+                <li  class="nav-item">
+                    <a class="nav-link font-weight-bold" href="{% url 'signup' %}" style="color: black; font-size:18px; font-family: 'Nunito'">Signup</a>
+                </li>
+
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <br>
+
+<div  class="container-fluid">
+<br>
+ {% if messages %}
+    {% for message in messages %}
+    <div  style="width: 600px; margin-left: 450px; margin-top: 10px;" class=" alert alert-dark alert-dismissible fade show" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+     {{ message }}
+</div>
+             {% endfor %}
+ {% endif %}
+  {% block content %}
+
+
+{% endblock %}
+</div>
+
+</body>
+<!-- Footer -->
+<footer class=" page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">Copyright © 2019 HeyPlex Vehicle Rental. All Rights Reserved.
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src=" {% static 'MDB1/js/jquery-3.3.1.min.js' %}" ></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
+
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+<!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
+<script type="text/javascript" src="{% static 'MDB1/js/mdb.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'MDB1/js/mdb.js' %}"></script>
+<script type="text/javascript"  src =" {% static 'MDB1/js/bootstrap.min.js' %}" ></script>
+<script type="text/javascript" src="{% static 'datepicker/jquery-ui.js' %}"></script>
+<script type="text/javascript" src="{% static 'MDB1/js/popper.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'jsdi/ajax.js' %}"></script>
+
+<script>
+        $(function() {
+            $("#date").datepicker({
+                minDate: 0,
+                dateFormat: 'yy-mm-dd'
+            });
+        });
+</script>
+
+
+
+</html>

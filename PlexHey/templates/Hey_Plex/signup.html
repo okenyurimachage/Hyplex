@@ -1,0 +1,180 @@
+{% extends 'Hey_Plex/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+
+.helptext{
+  visibility: hidden;
+}
+.me {background-color: white; color: #4abde8;border-radius: 12px;text-transform: capitalize;}
+.mimi {border-radius: 14px;text-transform: capitalize;font-family: Nunito}
+
+</style>
+
+<!--        <div style="margin-top: 90px;width: 600px; margin-left: 350px" class="card ">-->
+
+<!--  <h5 class="card-header info-color white-text text-center py-4">-->
+<!--    <strong>Register for HeyPlex</strong>-->
+<!--  </h5>-->
+
+    <div class="row">
+    <div class="col-md-6">
+          <p class="font-weight-bold animated fadeInLeft " style="font-size: 45px; font-family: 'Nunito'; margin-left:280px;">Register for your HeyPlex Account  </p>
+        <p style="font-family: 'Nanum Gothic'; font-size: 20px;margin-left:280px;" class="font-weight-light animated fadeInLeft ">Choose us to help you find your dream car</p>
+        <img style="margin-left:180px; width: 450px " class="img-responsive animated fadeInLeft delay-1s" src="{%  static 'images/login.png' %}" alt="HeyPlex" />
+    </div>
+             <div class="col-md-6">
+
+             <div>
+    <p class="animated fadeInLeft delay-2s" style="font-family: 'Nanum Gothic'; margin-left: 260px">Already have an account?<a href="{% url 'login' %}" class="me btn">Login</a>
+    </p>
+
+</div>
+            <form style="width: 500px" method="POST" class=" animated fadeInRight border border-white " action="{% url 'signup' %}" enctype="multipart/form-data">
+              {% csrf_token %}
+            <diV style="margin-top: 50px; "></diV>
+        {% if form.errors %}
+         <div class="alert alert-dark alert-dismissable " role="alert">
+             <button class="close" data-dismiss="alert">
+                     <small><sup>x</sup></small>
+              </button>
+              <p> Error Alert</p>
+         {% for field in form %}
+             {% if field.errors %}
+                 {{ field.errors }}
+             {% endif %}
+         {% endfor %}
+
+         </div>
+
+
+
+            {% endif %}
+
+    <div class="form-row mb-4">
+        <div class="col">
+            <div class="md-form">
+        <i class="fas fa-user prefix " style="color: black;font-size: 20px;"></i>
+        {{ form.first_name}}
+
+      </div>
+
+        </div>
+        <div class="col">
+            <div class="md-form">
+        <i class="fas fa-user prefix " style="color: black;font-size: 20px;"></i>
+         {{ form.last_name}}
+
+      </div>
+
+        </div>
+    </div>
+
+                        <div class="md-form">
+        <i class="fas fa-envelope prefix " style="color: black;font-size: 20px;"></i>
+         {{ form.email}}
+
+      </div>
+
+<br>
+     <div class="form-row mb-4">
+        <div class="col">
+            <div class="md-form">
+        <i class="fas fa-user-tie prefix " style="color: black;font-size: 20px;"></i>
+        {{ form.username}}
+
+      </div>
+
+        </div>
+        <div class="col">
+            <div class="md-form">
+        <i class="fas fa-calendar prefix " style="color: black;font-size: 20px;"></i>
+         {{ profile_form.Age }}
+                <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+        Must be above 21 years
+    </small>
+
+      </div>
+
+        </div>
+    </div>
+     <div class="md-form">
+        <i class="fas fa-id-badge prefix " style="color: black;font-size: 20px;"></i>
+       {{ profile_form.Driving }}
+
+      </div>
+            <br>
+            <div class="md-form">
+        <i class="fas fa-id-badge prefix " style="color: black;font-size: 20px;"></i>
+       {{ profile_form.image }}
+
+      </div>
+            <br>
+             <div class="form-row mb-4">
+        <div class="col">
+            <div class="md-form">
+        <i class="fas fa-id-card prefix " style="color: black;font-size: 20px;"></i>
+         {{ profile_form.Identification_Number }}
+
+      </div>
+
+        </div>
+        <div class="col">
+            <div class="md-form">
+        <i class="fas fa-phone prefix " style="color: black;font-size: 20px;"></i>
+        {{ profile_form.Phone_Number }}
+                    </div>
+
+        </div>
+
+    </div>
+ <div class="form-row mb-4">
+        <div class="col">
+            <div class="md-form">
+        <i class="fas fa-user-lock prefix " style="color: black;font-size: 20px;"></i>
+         {{ form.password1}}
+
+      </div>
+
+        </div>
+        <div class="col">
+            <div class="md-form">
+        <i class="fas fa-lock prefix " style="color: black;font-size: 20px;"></i>
+         {{ form.password2 }}
+                    </div>
+
+        </div>
+    </div>
+<small>
+ <p>By clicking
+        <em>Sign up</em> you agree to our
+        <a href="{% url 'details' %}" target="_blank">rental terms </a> as clearly stated in our website
+    </p>
+            </small>
+    <button style="margin-left: 210px" class="btn btn-info mimi" type="submit" >Sign in<i class="fas fa-sign-in-alt ml-1"></i></button>
+                <br>
+
+
+</form>
+            <br>
+            <br>
+        <br>
+        <br>
+    </div>
+</div>
+</div>
+     <br>
+     </div>
+    </div>
+    </div>
+{% endblock %}
+
+
+</body>
+
+
+</html>
+

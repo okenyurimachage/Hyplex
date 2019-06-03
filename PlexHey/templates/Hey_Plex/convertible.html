@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  {% extends 'Hey_Plex/base.html' %}
+    <title>Convertible Cars</title>
+</head>
+<body class="container">
+
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb blue-grey lighten-4">
+      <li class="breadcrumb-item"><a class="black-text" href="{% url 'ShowCase' %}">Home</a><i class="fas fa-angle-double-right mx-2"
+          aria-hidden="true"></i></li>
+      <li class="breadcrumb-item"><a class="black-text" href="{% url 'convertible' %}">Convertibles</a><i class="fas fa-angle-double-right mx-2"
+          aria-hidden="true"></i></li>
+    </ol>
+  </nav>
+
+<style>
+.product-listing-m {
+  margin:0 auto 40px;
+  overflow: hidden;
+}
+.product-listing-img {
+  float: left;
+  width: 45%;
+  position:relative;
+  overflow:hidden;
+}
+.product-listing-content {
+  float: left;
+  padding:20px 15px 20px 30px;
+  width: 55%;
+}
+.product-listing-content h5 {
+  margin-bottom: 2px;
+}
+.product-listing-content h5 a {
+	color:#111;
+}
+.product-listing-content ul {
+  margin: 0 auto 22px;
+  overflow: hidden;
+  padding: 0;
+}
+.product-listing-content li {
+  float: left;
+  font-size: 13px;
+  font-weight: 400;
+  list-style: outside none none;
+  margin: 0 auto;
+  width: 33%;
+}
+.product-listing-content li .fa {
+  font-size: 15px;
+  margin-right: 8px;
+}
+</style>
+<ul>
+{% for con in convertible %}
+
+<div class="card" style="width: 1000px; height: 280px; margin-left: 200px" >
+
+   <!-- Card content -->
+  <div class="card-body">
+   <div class="product-listing-m gray-bg">
+          <div class="product-listing-img" style="width: 300px ; height: 200px"><img src="{{ con.car_image.url }}" class="img-responsive" alt="Image" /> </a>
+          </div>
+          <div class="product-listing-content">
+              <h4><b>{{ con.car_model }}</b></h4>
+            <p class="list-price">Kshs {{ con.car_price }} Per Day</p>
+            <ul>
+                <li><i class="fa fa-calendar" aria-hidden="true"></i> {{ con.model_year}} model</li>
+              <li><i class="fa fa-user" aria-hidden="true"></i> {{ con.car_capacity }} seats</li>
+              <li><i class="fa fa-car" aria-hidden="true"></i> {{ con.fuel_type}} </li>
+
+            </ul>
+            <a href="{% url 'details1' con.id %}" style="margin-left: 300px" class="btn btn-info">Book Now <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
+          </div>
+        </div>
+  </div>
+
+</div>
+<!-- Card -->
+{% endfor %}
+</ul>
+
+<br>
+<br>
+<br>
+<br>
+<Br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<Br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<Br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}
+
+</body>
+</html>

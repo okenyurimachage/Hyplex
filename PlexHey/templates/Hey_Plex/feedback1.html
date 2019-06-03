@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <title>HeyPlex Vehicle Rental</title>
+
+     {% load static %}
+     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto%7CJosefin+Sans:100,300,400,500" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="{%  static 'MDB1/css/bootstrap.min.css' %}" type="text/css"/>
+
+    <link rel="stylesheet" href="{%  static 'MDB1/css/mdb.min.css' %}" type="text/css"/>
+
+    <style>
+        .navbar {
+    background-color: transparent;
+}
+    </style>
+</head>
+<body  style="background-color: whitesmoke">
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+        <a class="navbar-brand font-weight-bold" style="color: black">
+    <img src="{%  static 'images/pic2.png' %}" height="45" class="d-inline-block align-top"
+      alt="HeyPLex logo"> HeyPlex
+  </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul    class="navbar-nav ml-auto">
+
+
+
+                      <li  class="nav-item">
+                    <a class="nav-link font-weight-bold" href="{% url 'details' %}" style="color: black; font-family: Poppins"> Go back to Home</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+   <!-- Card -->
+<div style="width: 600px; margin-left: 400px;margin-top: 120px" class="card card-cascade wider reverse">
+
+  <!-- Card image -->
+  <div  class="view view-cascade overlay">
+    <img class="card-img-top" src="{%  static 'images/feed2.jpg' %}" alt="Card image cap">
+    <a href="#!">
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div  class="card-body card-body-cascade text-center">
+
+    <!-- Title -->
+    <h4 class="card-title"><strong>Thank you for your feedback</strong></h4>
+    <hr>
+    <!-- Text -->
+    <p class="card-text" style="line-height: 26px; font-size: 20px; color: black; font-family: 'Josefin Sans'">We cannot respond to you in person, but please know that your feedback has been received and will be reviewed by the support team.
+    If we need to follow up due to the feedback you have sent, we will contact you directly.
+
+We appreciate your assistance in making HeyPlex better.<br>
+
+Support team<br>
+HeyPlex<br>
+    </p>
+
+
+
+  </div>
+
+</div>
+<!-- Card -->
+    <br>
+    <br>
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">Copyright © 2019 HeyPlex Vehicle Rental. All Rights Reserved.
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</body>
+<script type="text/javascript" src="{% static 'MDB1/js/mdb.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'MDB1/js/mdb.js' %}"></script>
+<script type="text/javascript"  src =" {% static 'MDB1/js/bootstrap.min.js' %}" ></script>
+<script type="text/javascript" src=" {% static 'MDB1/js/jquery-3.3.1.min.js' %}" ></script>
+<script type="text/javascript" src="{% static 'MDB1/js/popper.min.js' %}"></script>
+
+
+
+
+</html>

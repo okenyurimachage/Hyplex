@@ -1,0 +1,42 @@
+{% extends "admin/base.html" %}
+{% load admin_static %}
+
+{% block extrahead %}
+{% endblock %}
+
+
+ Additional CSS includes
+{% block extrastyle %}
+    <style>
+
+
+    </style>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/my_project.css' %}" media="all">
+{% endblock %}
+
+
+ Additional JS files in footer, right before </body>
+{% block extrajs %}
+  <script type="text/javascript" src="{% static 'js/my_project.js' %}"></script>
+{% endblock %}
+
+
+ Footer links (left side)
+{% block footer_links %}
+  <p href="/docs/" class="icon">HeyPlex Vehicle Rental </p>
+{% endblock %}
+
+ Additional header content like notifications or language switcher
+{% block header_content %}
+    {{ block.super }}
+
+{% endblock %}
+
+{% block footer_branding %}
+{% endblock %}
+
+
+ Footer copyright (right side)
+{% block copyright %}
+  Copyright &copy; 2019 Client<br>Developed by <a href="#" target="_blank">Josephine</a>
+{% endblock %}
