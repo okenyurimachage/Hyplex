@@ -8,7 +8,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     Identification_Number = models.PositiveIntegerField(null=False)
     Age = models.PositiveIntegerField(null=False)
-    Phone_Number =  models.CharField(max_length=15, null=True, default=True)
+    Phone_Number =  models.CharField(max_length=13, null=True, default=True)
     Driving = models.PositiveIntegerField(null=False)
     image = models.ImageField(upload_to='profile/', max_length=255, null=True,blank=True)
 
@@ -30,7 +30,7 @@ class booking(models.Model):
     fullname = models.CharField(max_length=100)
     car_make1 = models.CharField(max_length=1000)
     car_model1 = models.CharField(max_length=1000)
-    phonenumber = models.CharField(max_length=15, null=True, default=True)
+    phonenumber = models.CharField(max_length=13, null=True, default=True)
     pickupdate = models.DateField()
     days = models.PositiveIntegerField()
     user = models.CharField(max_length=100)
