@@ -28,7 +28,7 @@ class feedback(models.Model):
 
 class booking(models.Model):
     fullname = models.CharField(max_length=100)
-    car_price = models.PositiveIntegerField(null=True,default=True)
+    car_price = models.PositiveIntegerField()
     car_make1 = models.CharField(max_length=1000)
     car_model1 = models.CharField(max_length=1000)
     phonenumber = models.CharField(max_length=13, null=True, default=True)
