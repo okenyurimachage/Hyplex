@@ -251,17 +251,18 @@ def add_feedback_submission(request):
 def bookings(request):
 
     fullname=request.POST['fullname']
+    car_price = request.POST['car_price']
     car_make1 = request.POST['car_make1']
     car_model1 = request.POST['car_model1']
     phonenumber = request.POST['phonenumber']
     pickupdate = request.POST['pickupdate']
     days = request.POST['days']
     user = request.POST['user']
-    amount = 1
+    amount = (car_price*days)
     lipa_na_mpesa(phonenumber,amount)
 
 
-    add1 = booking(fullname=fullname,phonenumber=phonenumber,car_make1=car_make1,car_model1=car_model1,
+    add1 = booking(fullname=fullname,car_price=car_price,phonenumber=phonenumber,car_make1=car_make1,car_model1=car_model1,
                    pickupdate=pickupdate,days=days,user=user)
 
 

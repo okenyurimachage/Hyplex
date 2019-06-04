@@ -137,8 +137,8 @@ admin.site.register(car,carAdmin)
 
 #
 class bookingAdmin(admin.ModelAdmin, ExportCsvMixin ):
-    list_display = ['fullname', 'phonenumber', 'car_make1', 'car_model1', 'pickupdate', 'days','user','created_at']
-    readonly_fields = ['fullname', 'phonenumber', 'car_make1', 'car_model1', 'pickupdate', 'days','user','created_at']
+    list_display = ['fullname', 'phonenumber', 'car_make1', 'car_model1', 'pickupdate','car_price', 'days','user','created_at']
+    readonly_fields = ['fullname', 'phonenumber', 'car_make1', 'car_model1','car_price', 'pickupdate', 'days','user','created_at']
     list_filter = ['created_at']
     search_fields = ['fullname']
     list_per_page = 10
@@ -157,7 +157,8 @@ class LNMonlineAdmin(admin.ModelAdmin):
                        'Phone_Number', 'Mpesa_Receipt_Number', 'Amount', 'Transaction_Date', ]
     list_filter = ['Transaction_Date']
 
-
+    def has_add_permission(self, request):
+        return False
 
 admin.site.register(booking,bookingAdmin)
 admin.site.register(LNMonline,LNMonlineAdmin)
