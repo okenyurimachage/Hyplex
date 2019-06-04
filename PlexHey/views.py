@@ -258,7 +258,7 @@ def bookings(request):
     pickupdate = request.POST['pickupdate']
     days = request.POST['days']
     user = request.POST['user']
-    amount = (car_price*days)
+    amount = int((int(car_price)*int(days)))
     lipa_na_mpesa(phonenumber,amount)
 
 
