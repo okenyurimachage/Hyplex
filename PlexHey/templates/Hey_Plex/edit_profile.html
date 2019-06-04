@@ -258,7 +258,7 @@ body {
 {#  <div class="card-body px-lg-5 pt-0">#}
 
     <!-- Form -->
-    <form method="POST" class=" animated  wow slideInRight border border-white " style=" margin-left:180px; width: 500px; color: #757575;" action="{% url 'edit_profile' %}" enctype="multipart/form-data" class="text-center" style="color: #757575;">
+    <form method="POST" class=" animated  wow slideInRight border border-white " style=" margin-left:220px; width: 500px; color: #757575;" action="{% url 'edit_profile' %}" enctype="multipart/form-data" class="text-center" style="color: #757575;">
 
     {% csrf_token %}
         {% if form.errors %}
@@ -281,7 +281,7 @@ body {
 
             {{ form|crispy }}
     {{ p_form|crispy }}
-            <button class="btn btn-outline-info btn-round btn-block my-4 waves-effect z-depth-0" type="submit">Submit<i class="fas fa-sign-in-alt ml-1"></i></button>
+            <button style="margin-left: 220px" class="btn btn-outline-info btn-block my-4 waves-effect z-depth-0" type="submit">Submit<i class="fas fa-sign-in-alt ml-1"></i></button>
             <br>
                 <small><a href="{% url 'change_password' %}">click here</a> to change password</small>
 
