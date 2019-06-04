@@ -10,11 +10,6 @@ from mpesa.models import LNMonline
 
 
 
-
-
-
-
-
 # export as csv class
 
 
@@ -141,25 +136,28 @@ admin.site.register(car,carAdmin)
 
 
 #
-# class bookingAdmin(admin.ModelAdmin, ExportCsvMixin ):
-#     list_display = ['fullname', 'phonenumber', 'car_make1', 'car_model1', 'pickupdate', 'days','user','created_at']
-#     readonly_fields = ['fullname', 'phonenumber', 'car_make1', 'car_model1', 'pickupdate', 'days','user','created_at']
-#     list_filter = ['created_at']
-#     search_fields = ['fullname']
-#     list_per_page = 10
-#
-#     actions = ["export_as_csv"]
-#
-#     def has_add_permission(self, request):
-#         return False
+class bookingAdmin(admin.ModelAdmin, ExportCsvMixin ):
+    list_display = ['fullname', 'phonenumber', 'car_make1', 'car_model1', 'pickupdate', 'days','user','created_at']
+    readonly_fields = ['fullname', 'phonenumber', 'car_make1', 'car_model1', 'pickupdate', 'days','user','created_at']
+    list_filter = ['created_at']
+    search_fields = ['fullname']
+    list_per_page = 10
+
+    actions = ["export_as_csv"]
+
+    def has_add_permission(self, request):
+        return False
 
 
 class LNMonlineAdmin(admin.ModelAdmin):
 
     date_hierarchy = 'Transaction_Date'
     list_display = ['Phone_Number', 'Mpesa_Receipt_Number', 'Amount', 'Transaction_Date',]
+    readonly_fields = ['Merchant_Request_ID','Checkout_Request_ID','Result_Code','Result_Description',
+                       'Phone_Number', 'Mpesa_Receipt_Number', 'Amount', 'Transaction_Date', ]
     list_filter = ['Transaction_Date']
 
 
-# admin.site.register(booking,bookingAdmin)
+
+admin.site.register(booking,bookingAdmin)
 admin.site.register(LNMonline,LNMonlineAdmin)
