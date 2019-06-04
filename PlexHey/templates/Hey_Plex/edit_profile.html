@@ -258,7 +258,7 @@ body {
 {#  <div class="card-body px-lg-5 pt-0">#}
 
     <!-- Form -->
-    <form method="POST" action="{% url 'edit_profile' %}" enctype="multipart/form-data" class="text-center" style="color: #757575;">
+    <form method="POST" class=" animated  wow slideInRight border border-white " style="width: 530px; color: #757575;" action="{% url 'edit_profile' %}" enctype="multipart/form-data" class="text-center" style="color: #757575;">
 
     {% csrf_token %}
         {% if form.errors %}
