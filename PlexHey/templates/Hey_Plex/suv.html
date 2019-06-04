@@ -9,14 +9,7 @@
 
 
 {% block content %}
-    <nav aria-label="breadcrumb">
-    <ol class="breadcrumb blue-grey lighten-4">
-      <li class="breadcrumb-item"><a class="black-text" href="{% url 'ShowCase' %}">Home</a><i class="fas fa-angle-double-right mx-2"
-          aria-hidden="true"></i></li>
-      <li class="breadcrumb-item"><a class="black-text" href="{% url 'suv' %}">SUV Cars</a><i class="fas fa-angle-double-right mx-2"
-          aria-hidden="true"></i></li>
-    </ol>
-  </nav>
+
 
 <style>
 .product-listing-m {
@@ -280,8 +273,10 @@ body {
 <div class="col-md-9">
 <div class="profile-content">
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb ">
+    <ol class="breadcrumb blue-grey lighten-4">
       <li class="breadcrumb-item"><a class="black-text" href="{% url 'ShowCase' %}">Home</a><i class="fas fa-angle-double-right mx-2"
+          aria-hidden="true"></i></li>
+      <li class="breadcrumb-item"><a class="black-text" href="{% url 'ShowCase/suv/' %}">SUV Cars</a><i class="fas fa-angle-double-right mx-2"
           aria-hidden="true"></i></li>
     </ol>
   </nav>
