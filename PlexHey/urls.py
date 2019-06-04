@@ -9,7 +9,7 @@ urlpatterns = [
 
     path('search/', views.search),
     path('Coupes/<int:pk>/',CoupesDetailView.as_view(), name='details1'),
-    path('hatchback/<int:pk>/',HatchDetailView.as_view(), name='details1'),
+    # path('hatchback/<int:pk>/',HatchDetailView.as_view(), name='details1'),
     path('convertible/<int:pk>/', convertibleDetailView.as_view(), name='convertible'),
     path('sedan/<int:pk>/', sedanDetailView.as_view(), name='sedan'),
     path('mpv/<int:pk>/', mpvDetailView.as_view(), name='mpv'),
