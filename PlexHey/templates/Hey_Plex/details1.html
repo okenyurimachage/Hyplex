@@ -257,7 +257,7 @@ body {
           aria-hidden="true"></i></li>
     </ol>
   </nav>
-    <form style="width: 550px;" class="text-center border border-light p-5" method="POST" action="{% url 'bookings' %}">
+    <form style="width: 550px; margin-left: 220px" class="text-center border border-light p-5 animate fadeInRight" method="POST" action="{% url 'bookings' %}">
               {% csrf_token %}
         {% if form.errors %}
          <div class="alert alert-dark alert-dismissable " role="alert">
