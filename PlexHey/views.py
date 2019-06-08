@@ -107,11 +107,14 @@ def login_user(request):
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
-
-            login(request, user)
-            # messages.success(request, 'You have successfully logged in dear...')
-            # Redirect to a success page.
-            return redirect('ShowCase')
+            if user.is_superuser:
+                login(request, user)
+                return redirect('admin:index')
+            else:
+                login(request, user)
+                # messages.success(request, 'You have successfully logged in dear...')
+                # Redirect to a success page.
+                return redirect('ShowCase')
         else:
             # Return an 'invalid login' error message.
             messages.info(request, 'Wrong Username/Password.')
