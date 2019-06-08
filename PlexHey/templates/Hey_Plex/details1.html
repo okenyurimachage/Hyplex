@@ -4,7 +4,7 @@
 
 
     <meta charset="UTF-8">
-  {% extends 'Hey_Plex/base.html' %}
+{#  {% extends 'Hey_Plex/base.html' %}#}
     <title>Coupe Cars</title>
 {% load static %}
 </head>
@@ -309,6 +309,10 @@ body {
                 <br>
 
 </form>
+</div>
+</div>
+</div>
+    </div>
 
 
 {#     <form method="POST" action=" {% url 'bookings' %} ">#}
@@ -382,10 +386,33 @@ body {
 {#</div>#}
 <br>
 <br>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/js/gijgo.min.js "></script>
-<script>
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src=" {% static 'MDB1/js/jquery-3.3.1.min.js' %}" ></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+
+
+<!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
+{#<script type="text/javascript" src="{% static 'MDB1/js/mdb.min.js' %}"></script>#}
+{#<script type="text/javascript" src="{% static 'MDB1/js/mdb.js' %}"></script>#}
+{#<script type="text/javascript"  src =" {% static 'MDB1/js/bootstrap.min.js' %}" ></script>#}
+<script type="text/javascript" src="{% static 'datepicker/jquery-ui.js' %}"></script>
+{#<script type="text/javascript" src="{% static 'MDB1/js/popper.min.js' %}"></script>#}
+{#<script type="text/javascript" src="{% static 'jsdi/ajax.js' %}"></script>#}
+
+<script>
+        $(function() {
+            $("#date").datepicker({
+                minDate: 0,
+                dateFormat: 'yy-mm-dd'
+            });
+        });
 </script>
+
 {% endblock %}
 
 </body>
