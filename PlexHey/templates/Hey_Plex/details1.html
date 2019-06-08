@@ -12,10 +12,6 @@
 
 {% block content %}
 
-<link rel="stylesheet" href="{%  static 'datepicker/jquery-ui.css' %}" type="text/css">
-    <link rel="stylesheet" href="{%  static 'datepicker/jquery-ui.min.css' %}" type="text/css">
-<link rel="stylesheet" href="{%  static 'datepicker/jquery-ui.structure.css' %}" type="text/css">
-    <link rel="stylesheet" href="{%  static 'datepicker/jquery-ui.structure.min.css' %}" type="text/css">
 
 
 <style>
@@ -300,7 +296,7 @@ body {
     <input class="form-control"  type="textfield" name="phonenumber"  placeholder="Phone Number" autocomplete="off" required>
     <br>
 
-        <input class="form-control" type="textfield" name="pickupdate" placeholder="Pick-up Date"  id="date" autocomplete="off" required>
+        <input class="form-control"  name="pickupdate" placeholder="Pick-up Date"  id="date" autocomplete="off" required>
 <br>
 
      <input class="form-control"  type="textfield" name="days" placeholder="Number of days to book the car" autocomplete="off" required>
