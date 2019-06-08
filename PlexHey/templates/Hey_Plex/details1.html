@@ -12,7 +12,8 @@
 
 {% block content %}
 
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
 
 <style>
     hr {
@@ -296,7 +297,14 @@ body {
     <input class="form-control"  type="textfield" name="phonenumber"  placeholder="Phone Number" autocomplete="off" required>
     <br>
 
-        <input class="form-control"  name="pickupdate" placeholder="Pick-up Date"  id="date" autocomplete="off" required>
+        <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+      <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+      <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+      </div>
+    </div>
+
+
 <br>
 
      <input class="form-control"  type="textfield" name="days" placeholder="Number of days to book the car" autocomplete="off" required>
@@ -312,6 +320,11 @@ body {
 </div>
     </div>
 
+<script>
+      $(function () {
+        $("#datetimepicker1").datetimepicker();
+      });
+    </script>
 
 {#     <form method="POST" action=" {% url 'bookings' %} ">#}
 {#         {% csrf_token %}#}
