@@ -4,7 +4,7 @@
 
 
     <meta charset="UTF-8">
-{#  {% extends 'Hey_Plex/base.html' %}#}
+  {% extends 'Hey_Plex/base.html' %}
     <title>Coupe Cars</title>
 {% load static %}
 </head>
@@ -200,7 +200,7 @@ body {
 			<div style="height: 100%" class="profile-sidebar">
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic">
-					<img class=" rounded-circle img-fluid " style=" margin-left:100px; width:160px; height:160px;" src="{%  static 'images/car4.png' %}" class="img-responsive" alt="">
+					<img class=" rounded-circle img-fluid " style=" margin-left:100px; width:160px; height:160px;" src="{{ user.profile.image.url }}" class="img-responsive" alt="">
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
@@ -386,32 +386,6 @@ body {
 {#</div>#}
 <br>
 <br>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-
-
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src=" {% static 'MDB1/js/jquery-3.3.1.min.js' %}" ></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-
-
-<!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
-{#<script type="text/javascript" src="{% static 'MDB1/js/mdb.min.js' %}"></script>#}
-{#<script type="text/javascript" src="{% static 'MDB1/js/mdb.js' %}"></script>#}
-{#<script type="text/javascript"  src =" {% static 'MDB1/js/bootstrap.min.js' %}" ></script>#}
-<script type="text/javascript" src="{% static 'datepicker/jquery-ui.js' %}"></script>
-{#<script type="text/javascript" src="{% static 'MDB1/js/popper.min.js' %}"></script>#}
-{#<script type="text/javascript" src="{% static 'jsdi/ajax.js' %}"></script>#}
-
-<script>
-        $(function() {
-            $("#date").datepicker({
-                minDate: 0,
-                dateFormat: 'yy-mm-dd'
-            });
-        });
-</script>
 
 {% endblock %}
 
