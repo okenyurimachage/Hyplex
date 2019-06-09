@@ -341,8 +341,15 @@ body {
 </script>
 
 <br>
+<div class="input-group " data-target-input="nearest">
 
-     <input class="form-control"  type="textfield" name="days" placeholder="Number of days to book the car" autocomplete="off" required>
+      <div class="input-group-append" >
+        <div class="input-group-text"><i class="fa fa-sort-numeric-up-alt"></i></div>
+          <input style="width: 480px" class="form-control"  type="textfield" name="days" placeholder="Number of days to book the car" autocomplete="off" required>
+      </div>
+    </div>
+
+
 <br>
 <input class="form-control"  type="hidden" value="{{user.username}}" name="user" required>
 
