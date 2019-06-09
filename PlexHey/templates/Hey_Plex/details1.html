@@ -313,7 +313,7 @@ body {
 
       <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-          <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+          <input type="text" name="pickupdate" placeholder="Pick-up Date"  id="date" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
       </div>
     </div>
 
@@ -337,6 +337,14 @@ body {
       $(function () {
         $("#datetimepicker1").datetimepicker();
       });
+    </script>
+    <script>
+    var date = new Date();
+date.setDate(date.getDate());
+
+$('#date').datepicker({
+    startDate: date
+});
     </script>
 
 {#     <form method="POST" action=" {% url 'bookings' %} ">#}
