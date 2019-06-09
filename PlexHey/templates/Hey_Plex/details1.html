@@ -316,7 +316,16 @@ body {
           <input type="text" name="pickupdate" placeholder="Pick-up Date"  id="date" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
       </div>
     </div>
+<script>
+      $(function () {
+        $("#date").datetimepicker(
 
+               {  minDate:new Date()}
+
+
+        );
+      });
+    </script>
 
 
 <br>
@@ -333,26 +342,15 @@ body {
 </div>
 </div>
     </div>
+
     <script>
     var date = new Date();
 date.setDate(date.getDate());
 
-$('#date').datetimepicker({
+$('#date').datepicker({
     startDate: date
 });
     </script>
-{#<script>#}
-{#      $(function () {#}
-{#        $("#date").datetimepicker({#}
-{##}
-{#                minDate: 0,#}
-{#                dateFormat: 'yy-mm-dd'#}
-{#            }#}
-{##}
-{#        );#}
-{#      });#}
-{#    </script>#}
-
 
 {#     <form method="POST" action=" {% url 'bookings' %} ">#}
 {#         {% csrf_token %}#}
