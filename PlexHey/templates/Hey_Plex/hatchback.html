@@ -294,7 +294,8 @@ body {
                 <li><i class="fa fa-calendar" aria-hidden="true"></i> {{ ha.model_year}} model</li>
               <li><i class="fa fa-user" aria-hidden="true"></i> {{ ha.car_capacity }} seats</li>
               <li><i class="fa fa-car" aria-hidden="true"></i> {{ ha.fuel_type}} </li>
-
+{% empty %}
+                <li>No Sedan Added yet.</li>
             </ul>
             <a href="{% url 'details1' ha.id %}" style="margin-left: 300px" class="btn btn-info">Book Now <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
           </div>
