@@ -278,32 +278,32 @@ body {
   </nav>
 
 <ul>
-{#{% for ob in model1.m.all %}#}
+{% for value in model1.get_field_values %}
 
 <div class="card" style="width: 1000px; height: 280px;" >
 
    <!-- Card content -->
   <div class="card-body">
    <div class="product-listing-m gray-bg">
-          <div class="product-listing-img" style="width: 300px ; height: 200px"><img src="{{ ob.car_image.url }}" class="img-responsive" alt="Image" /> </a>
+          <div class="product-listing-img" style="width: 300px ; height: 200px"><img src="{{ value.car_image.url }}" class="img-responsive" alt="Image" /> </a>
           </div>
           <div class="product-listing-content">
-              <h4><b>{{ ob.car_model }}</b></h4>
-            <p class="list-price">Kshs {{ ha.car_price }} Per Day</p>
+              <h4><b>{{ value.car_model }}</b></h4>
+            <p class="list-price">Kshs {{ value.car_price }} Per Day</p>
             <ul>
-                <li><i class="fa fa-calendar" aria-hidden="true"></i> {{ ob.model_year}} model</li>
-              <li><i class="fa fa-user" aria-hidden="true"></i> {{ ob.car_capacity }} seats</li>
-              <li><i class="fa fa-car" aria-hidden="true"></i> {{ ob.fuel_type}} </li>
-
-            </ul>
-            <a href="{% url 'details1' ob.id %}" style="margin-left: 300px" class="btn btn-info">Book Now <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
+{#                <li><i class="fa fa-calendar" aria-hidden="true"></i> {{ ob.model_year}} model</li>#}
+{#              <li><i class="fa fa-user" aria-hidden="true"></i> {{ ob.car_capacity }} seats</li>#}
+{#              <li><i class="fa fa-car" aria-hidden="true"></i> {{ ob.fuel_type}} </li>#}
+{##}
+{#            </ul>#}
+{#            <a href="{% url 'details1' ob.id %}" style="margin-left: 300px" class="btn btn-info">Book Now <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>#}
           </div>
         </div>
   </div>
 
 </div>
     <br>
-{#{% endfor %}#}
+{% endfor %}
 
 </ul>
 </div>

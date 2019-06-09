@@ -64,6 +64,9 @@ class model1(models.Model):
     def __str__(self):
         return self.car_model
 
+    def get_field_values(self):
+        return [field.value_to_string(self) for field in model1._meta.fields]
+
 class car(models.Model):
     car_make = models.ForeignKey(make1, on_delete=models.CASCADE)
     car_model = models.ForeignKey(model1, on_delete=models.CASCADE)
