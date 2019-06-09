@@ -335,7 +335,13 @@ body {
     </div>
 <script>
       $(function () {
-        $("#datetimepicker1").datetimepicker();
+        $("#datetimepicker1").datetimepicker({
+
+                minDate: 0,
+                dateFormat: 'yy-mm-dd'
+            }
+
+        );
       });
     </script>
     <script>
