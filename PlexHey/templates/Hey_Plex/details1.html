@@ -268,7 +268,7 @@ body {
           aria-hidden="true"></i></li>
     </ol>
   </nav>
-    <form style="width: 550px; margin-left: 220px" class="text-center border border-light p-5 animate fadeInRight" method="POST" action="{% url 'bookings' %}">
+    <form style="width: 550px; margin-left: 220px; background-color: whitesmoke" class="text-center border border-light p-5 animate fadeInRight" method="POST" action="{% url 'bookings' %}">
               {% csrf_token %}
         {% if form.errors %}
          <div class="alert alert-dark alert-dismissable " role="alert">
@@ -290,7 +290,6 @@ body {
 
         <p class="h4 mb-4">Booking Details <a ><i class="fas fa-car mr-1"></i></a></p>
 
-    <br>
 <input class="form-control"  type="hidden" name="fullname" value=" {{ user.first_name }}  {{ user.last_name }}" required>
 <br>
     <input class="form-control" type="hidden" name="car_price" value="{{ object.car_price }}" required>
