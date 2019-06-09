@@ -333,25 +333,26 @@ body {
 </div>
 </div>
     </div>
-<script>
-      $(function () {
-        $("#date").datetimepicker({
-
-                minDate: 0,
-                dateFormat: 'yy-mm-dd'
-            }
-
-        );
-      });
-    </script>
     <script>
     var date = new Date();
 date.setDate(date.getDate());
 
-$('#date').datepicker({
+$('#date').datetimepicker({
     startDate: date
 });
     </script>
+{#<script>#}
+{#      $(function () {#}
+{#        $("#date").datetimepicker({#}
+{##}
+{#                minDate: 0,#}
+{#                dateFormat: 'yy-mm-dd'#}
+{#            }#}
+{##}
+{#        );#}
+{#      });#}
+{#    </script>#}
+
 
 {#     <form method="POST" action=" {% url 'bookings' %} ">#}
 {#         {% csrf_token %}#}
