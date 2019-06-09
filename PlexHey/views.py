@@ -144,6 +144,15 @@ class ShowCase(ListView):
     def get_queryset(self):
       return make1.objects.all()
 
+
+class ShowDetail(DetailView):
+
+    model = model1
+    template_name = 'Hey_Plex/details2.html'
+
+
+
+
 def search(request):
 
         q = request.GET.get('q')

@@ -1,7 +1,7 @@
 from . import views
 from django.urls import path
 from django.contrib.auth import views as auth_views
-from .views import CoupesListView,ShowCase,CoupesDetailView,HatchListView,HatchDetailView,convertibleDetailView,convertibleListView,sedanDetailView,sedanListView,mpvDetailView,mpvListView,suvDetailView,suvListView,crossoverDetailView,crossoverListView
+from .views import CoupesListView,ShowCase,ShowDetail,CoupesDetailView,HatchListView,HatchDetailView,convertibleDetailView,convertibleListView,sedanDetailView,sedanListView,mpvDetailView,mpvListView,suvDetailView,suvListView,crossoverDetailView,crossoverListView
 
 
 urlpatterns = [
@@ -23,6 +23,7 @@ urlpatterns = [
     path('edit_profile', views.edit_profile, name='edit_profile'),
     path('change_password/', views.change_password, name='change_password'),
     path('ShowCase/',ShowCase.as_view(), name='ShowCase'),
+    path('ShowCase/<int:pk>',ShowDetail.as_view(),name='details2'),
     path('ShowCase/Coupe/', CoupesListView.as_view(), name='Coupes'),
     path('ShowCase/hatchback/', HatchListView.as_view(), name='hatchback'),
     path('ShowCase/convertibles/', convertibleListView.as_view(), name='convertible'),
