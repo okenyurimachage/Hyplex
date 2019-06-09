@@ -278,7 +278,7 @@ body {
   </nav>
 
 <ul>
-{% for value in model1.get_field_values %}
+{% for value in model1.model1instance_set.all %}
 
 <div class="card" style="width: 1000px; height: 280px;" >
 
