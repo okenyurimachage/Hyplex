@@ -309,7 +309,7 @@ body {
     <input class="form-control"  type="textfield" name="phonenumber"  placeholder="Phone Number" autocomplete="off" required>
     <br>
 
-     <div class="input-group date" id="date" data-target-input="nearest">
+     <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
 
       <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -323,7 +323,7 @@ body {
             var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
 
             //Date1
-            $('#ctl00_ContentPlaceHolder1_txtTranDate').datepicker({
+            $('#datetimepicker1').datepicker({
               format: 'dd-mm-yyyy',
               todayHighlight:'TRUE',
               startDate: today,
