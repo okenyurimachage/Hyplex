@@ -128,6 +128,7 @@ def details(request):
 
 def bookingtable(request):
     det = booking.objects.filter(user= request.user)
+    ordering = ['-created_at']
     context = {
         'det': det
     }

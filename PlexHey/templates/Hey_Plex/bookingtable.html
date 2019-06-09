@@ -249,6 +249,9 @@ body {
         <th scope="col">Vehicle Booked</th>
         <th scope="col">Days Booked</th>
         <th scope="col">Booking Date</th>
+          <th scope="col">View</th>
+          <th scope="col">Delete</th>
+
 
       </tr>
     </thead>
@@ -262,10 +265,10 @@ body {
           <td  style="font-family: 'Nunito'; font-size: 14px; ">{{ d.days }}</td>
         <td  style="font-family: 'Nunito'; font-size: 14px; ">{{ d.created_at }}</td>
       <td>
-        <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 mimi">View</button>
+        <button type="button" class="btn  btn-outline-blue-grey btn-rounded btn-sm m-0 mimi">View</button>
       </td>
       <td>
-        <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 mimi">Delete</button>
+        <button type="button" class="btn btn-outline-blue-grey btn-rounded btn-sm m-0 mimi">Delete</button>
       </td>
       </tr>
 {% endfor %}
