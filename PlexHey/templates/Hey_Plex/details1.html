@@ -305,8 +305,14 @@ body {
             <input class="form-control" type="textfield" name="car_model1" value="{{ object.car_model}}" placeholder="{{ object.car_model }}" readonly>
         </div>
     </div>
+  <div class="input-group "  data-target-input="nearest">
 
-    <input class="form-control"  type="textfield" name="phonenumber"  placeholder="Phone Number" autocomplete="off" required>
+      <div class="input-group-append" >
+        <div class="input-group-text"><i class="fa fa-phone"></i></div>
+          <input class="form-control"  type="textfield" name="phonenumber"  placeholder="Phone Number" autocomplete="off" required>
+      </div>
+    </div>
+{#    <input class="form-control"  type="textfield" name="phonenumber"  placeholder="Phone Number" autocomplete="off" required>#}
     <br>
 
      <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
