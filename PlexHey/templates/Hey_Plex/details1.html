@@ -309,24 +309,30 @@ body {
     <input class="form-control"  type="textfield" name="phonenumber"  placeholder="Phone Number" autocomplete="off" required>
     <br>
 
-     <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+     <div class="input-group date" id="date" data-target-input="nearest">
 
       <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-          <input type="text" name="pickupdate" placeholder="Pick-up Date"  id="date" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+          <input type="text" name="pickupdate" placeholder="Pick-up Date"  id="date" class="form-control datetimepicker-input" />
       </div>
     </div>
-<script>
-      $(function () {
-        $("#date").datetimepicker(
+<script type="text/javascript">
+        $(function () {
+            /*--FOR DATE----*/
+            var date = new Date();
+            var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
 
-               {  minDate:new Date()}
+            //Date1
+            $('#ctl00_ContentPlaceHolder1_txtTranDate').datepicker({
+              format: 'dd-mm-yyyy',
+              todayHighlight:'TRUE',
+              startDate: today,
+              endDate:0,
+              autoclose: true
+            });
 
-
-        );
-      });
-    </script>
-
+        });
+</script>
 
 <br>
 
