@@ -298,15 +298,17 @@ body {
 
             </ul>
             <a href="{% url 'details1' co.id %}" style="margin-left: 300px" class="btn btn-info">Book Now <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
-         {% empty %}
-                <li>No Sedan Added yet.</li>
+
           </div>
         </div>
   </div>
 
 </div>
     <br>
+    {% empty %}
+                <li>No Sedan Added yet.</li>
 {% endfor %}
+
 
 </ul>
 </div>
