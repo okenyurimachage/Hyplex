@@ -32,7 +32,7 @@ class booking(models.Model):
     car_make1 = models.CharField(max_length=1000)
     car_model1 = models.CharField(max_length=1000)
     phonenumber = models.CharField(max_length=13, null=True, default=True)
-    # pickupdate = models.DateField()
+    pickupdate = models.DateTimeField()
     days = models.PositiveIntegerField()
     user = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
