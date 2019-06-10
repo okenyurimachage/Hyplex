@@ -13,21 +13,22 @@
 {% block content %}
 
    <!-- Bootstrap 4 -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
-    <!-- Font Awesome -->
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-    <!-- Moment.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js" integrity="sha256-VBLiveTKyUZMEzJd6z2mhfxIqz3ZATCuVMawPZGzIfA=" crossorigin="anonymous"></script>
-
-    <!-- Tempus Dominus Bootstrap 4 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css" integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs=" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js" integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4=" crossorigin="anonymous"></script>
-<style>
+{#    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">#}
+{#    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>#}
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>#}
+{#    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>#}
+{##}
+{#    <!-- Font Awesome -->#}
+{#    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">#}
+{##}
+{#    <!-- Moment.js -->#}
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js" integrity="sha256-VBLiveTKyUZMEzJd6z2mhfxIqz3ZATCuVMawPZGzIfA=" crossorigin="anonymous"></script>#}
+{##}
+{#    <!-- Tempus Dominus Bootstrap 4 -->#}
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css" integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs=" crossorigin="anonymous" />#}
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js" integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4=" crossorigin="anonymous"></script>#}
+<link rel="stylesheet" href="{%  static 'datepicker/jquery-ui.css' %}" type="text/css">
+    <style>
     hr {
   display: block;
   margin-top: 0.5em;
@@ -315,30 +316,30 @@ body {
 {#    <input class="form-control"  type="textfield" name="phonenumber"  placeholder="Phone Number" autocomplete="off" required>#}
     <br>
 
-     <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+     <div class="input-group "  data-target-input="nearest">
 
-      <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+      <div class="input-group-append" >
         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-          <input style="width: 415px" type="text" name="pickupdate" placeholder="Pick-up Date"  id="date" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+          <input style="width: 415px" type="text" name="pickupdate" placeholder="Pick-up Date"  id="date" class="form-control " />
       </div>
     </div>
-<script type="text/javascript">
-        $(function () {
-            /*--FOR DATE----*/
-            var date = new Date();
-            var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-
-            //Date1
-            $('#datetimepicker1').datetimepicker({
-              format: 'dd-mm-yyyy',
-              todayHighlight:'TRUE',
-              startDate: today,
-              endDate:0,
-              autoclose: true
-            });
-
-        });
-</script>
+{#<script type="text/javascript">#}
+{#        $(function () {#}
+{#            /*--FOR DATE----*/#}
+{#            var date = new Date();#}
+{#            var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());#}
+{##}
+{#            //Date1#}
+{#            $('#datetimepicker1').datetimepicker({#}
+{#              format: 'dd-mm-yyyy',#}
+{#              todayHighlight:'TRUE',#}
+{#              startDate: today,#}
+{#              endDate:0,#}
+{#              autoclose: true#}
+{#            });#}
+{##}
+{#        });#}
+{#</script>#}
 
 <br>
 <div class="input-group " data-target-input="nearest">
@@ -363,14 +364,13 @@ body {
     </div>
 
     <script>
-    var date = new Date();
-date.setDate(date.getDate());
-
-$('#date').datepicker({
-    startDate: date
-});
-    </script>
-
+        $(function() {
+            $("#date").datepicker({
+                minDate: 0,
+                dateFormat: 'yy-mm-dd'
+            });
+        });
+</script>
 {#     <form method="POST" action=" {% url 'bookings' %} ">#}
 {#         {% csrf_token %}#}
 {#    <div class="row" style="font-family: Serif;font-size: 18px; margin-left: 30px; margin-right: 400px; margin-top: 40px; margin-bottom: 100px;">#}
