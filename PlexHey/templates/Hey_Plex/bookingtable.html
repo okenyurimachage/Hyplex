@@ -302,7 +302,7 @@ body {
           {% if d.paid %}
           <a href="{% url 'pay' d.id d.phonenumber d.amount  %}" class="btn btn-success btn-rounded btn-sm m-0 mimi disabled">Pay</a>
           {% else%}
-          <a href="{% url 'pay' d.id   d.id d.phonenumber d.amount %}" class="btn btn-danger btn-rounded btn-sm m-0 mimi">Pay</a>       
+          <a href="{% url 'pay' d.id d.phonenumber d.amount %}" class="btn btn-danger btn-rounded btn-sm m-0 mimi">Pay</a>       
           {% endif %}
         </td>
       </tr>
