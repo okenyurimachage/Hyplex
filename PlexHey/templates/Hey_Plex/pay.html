@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+  {% extends 'Hey_Plex/base.html' %}
+    <title>Coupe Cars</title>
+{% load static %}
+</head>
+<body class="container">
+
+{% block content %}
+
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Static Example</title>
+
+    <!-- Bootstrap 4 -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script> -->
+
+    <!-- Font Awesome -->
+    <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+
+    <!-- Moment.js -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js" integrity="sha256-VBLiveTKyUZMEzJd6z2mhfxIqz3ZATCuVMawPZGzIfA=" crossorigin="anonymous"></script> -->
+
+    <!-- Tempus Dominus Bootstrap 4 -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css" integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js" integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4=" crossorigin="anonymous"></script> -->
+
+    <style>
+    hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+
+body {
+  background: #F1F3FA;
+}
+
+/* Profile container */
+.profile {
+  margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+    text-transform: capitalize;
+  color: #5a7391;
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: capitalize;
+  color: #5b9bd1;
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
+}
+{##}
+.navi {
+  {#text-align: center;#}
+  font-weight: 600;
+}
+
+.navi * {
+  box-sizing: border-box;
+  transition: all .35s ease;
+}
+
+.navi li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: .5em 1em;
+  paddin: 0;
+}
+
+.navi a {
+  padding: .5em .8em;
+  position: relative;
+  text-decoration: none;
+}
+
+.navi a::before,
+.navi a::after {
+  content: '';
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  transition: all .35s ease;
+  opacity: 0;
+}
+
+.navi a::before {
+  content: '';
+  right: 0;
+  top: 0;
+  border-top: 3px solid #3E8914;
+  border-right: 3px solid #2E640F;
+  transform: translate(-100%, 50%);
+}
+
+.navi a:after {
+  content: '';
+  left: 0;
+  bottom: 0;
+  border-bottom: 3px solid #2E640F;
+  border-left: 3px solid #3E8914;
+  transform: translate(100%, -50%)
+}
+
+.navi a:hover:before,
+.navi a:hover:after{
+  transform: translate(0,0);
+  opacity: 1;
+}
+
+.navi a:hover {
+  color: black;
+
+}
+</style>
+    <div class="container-fluid">
+<div class="row profile">
+<div  class=" col-md-3 animated fadeInLeft">
+			<div style="height: 100%" class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<img class=" rounded-circle img-fluid " style=" margin-left:100px; width:160px; height:160px;" src="{{ user.profile.image.url }}" class="img-responsive" alt="">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div style="font-family: Nunito" class="profile-usertitle-name">
+						{{ user.first_name}} {{ user.last_name }}
+					</div>
+					<div style="font-family: Nunito" class="profile-usertitle-job">
+						Customer
+					</div>
+				</div>
+
+				<div class="">
+					<ul class="navi" style="list-style: none; ">
+						<li style=" padding:10px 15px;font-size: 17px; font-family: Nunito">
+							<a href="{% url 'ShowCase' %}">
+							<i class="fas fa-home prefix " ></i>
+							Home </a>
+						</li>
+						<li style=" padding:10px 15px; font-size: 17px;font-family: Nunito">
+							<a href="{% url 'edit_profile' %}">
+							<i class="fas fa-user prefix " ></i>
+							My Account </a>
+						</li>
+						<li style=" padding:10px 15px; font-size: 17px;font-family: Nunito">
+							<a href="{% url 'bookingtable' %}">
+							<i class="fas fa-calendar prefix " ></i>
+							My Bookings </a>
+						</li >
+						<li style=" padding:10px 15px; font-size: 17px;font-family: Nunito">
+							<a href="{% url 'change_password' %}">
+							<i class="fas fa-lock prefix " ></i>
+							Change Password </a>
+						</li>
+                        <li style=" padding:10px 15px; font-size: 17px;font-family: Nunito">
+							<a href="{% url 'logout' %}">
+							<i class="fas fa-sign-out-alt prefix " ></i>
+							Logout </a>
+						</li>
+					</ul>
+				</div>
+				<!-- END MENU -->
+
+			</div>
+		</div>
+<div class="col-md-9">
+<div class="profile-content">
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb blue-grey lighten-4">
+      <li class="breadcrumb-item"><a class="black-text" href="{% url 'ShowCase' %}">Home</a><i class="fas fa-angle-double-right mx-2"
+          aria-hidden="true"></i></li>
+      
+         <li class="breadcrumb-item"><a class="black-text" href="">Booking details</a><i class="fas fa-angle-double-right mx-2"
+          aria-hidden="true"></i></li>
+    </ol>
+  </nav>
+  <body style="width:90%;margin:auto;min-width:600px;max-width:2000px" class="container">
+    <!-- Card -->
+    <div style="width: 500px; height: 680px; margin-left: 200px; margin-top: 30px" class="card">
+    
+      <!-- Card image -->
+      <!-- <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap"> -->
+    
+      <!-- Card content -->
+      <div class="card-body">
+    
+        <!-- Title -->
+        <h4 class="card-title"><a>Payment Method</a></h4>
+        <!-- Text -->
+        <hr>
+    
+        <p style="font-size: 16px" class="card-text "><b>Kindly choose your mode of payment?</b></p>
+        
+         <style type="text/css">
+             @media (min-width: 200px)and (max-width: 400px){
+    
+                 #container{
+                     width: 100%
+                 }
+    
+                 #card {
+    
+                     width: 30%
+                 }
+             }
+         </style>
+    
+    <!-- Default checked -->
+    <div class="custom-control custom-radio">
+      <input type="radio" class="custom-control-input" id="defaultChecked" name="defaultExampleRadios" checked>
+      <label class="custom-control-label" for="defaultChecked"><img src="mpesa1.jpg"> Pay Online/M-pesa</label>
+    </div>
+    <div class="form-text text-muted" style="font-size: 12px">
+        <p>
+        Here is a few notifications you should read before paying:	
+    PLEASE NOTE:
+    <ul>
+    <li>DON'T WORRY - Your Money is SAFE! And we will refund you if you are not satisfied with the car you will be given</li>
+    <li>Please check if you have enough money to request for the car</li>
+    <li>Please DO NOT press Make Payment unless you are sure of what you have booked</li>
+    </ul>
+    Note: By pressing Make Payment it means you are ready to pre-pay. Your order will not go through if you do not pre-pay 
+        </p>
+    </div>
+    <!-- Default unchecked disabled -->
+    <div class="custom-control custom-radio">
+      <input type="radio" class="custom-control-input" id="defaultUncheckedDisabled2" name="disabledGroupExample" disabled>
+      <label class="custom-control-label" for="defaultUncheckedDisabled2"><img src="cashIcon1_1.png"> Pay cash on arrival</label>
+    </div>
+    <div class="form-text text-muted" style="font-size: 11px">
+        <p>Pay cash when you come for the booked car. Unvailable for now due to security reasons</p>
+        </div>
+    
+    <div class="custom-control custom-radio">
+      <input type="radio" class="custom-control-input" id="defaultUncheckedDisabled2" name="disabledGroupExample" disabled>
+      <label class="custom-control-label" for="defaultUncheckedDisabled2"><img src="CODlogo.jpg"> Pay with ATM</label>
+    </div>
+    <div class="form-text text-muted" style="font-size: 11px">
+        <p>Pay online with your Debit/Credit card</p>
+    
+      </div>
+    <div>
+        <span>Price Per day</span> 
+        <span style="padding-left: 19.0em">pesa</span><br>
+        <span>Number of days booked</span> 
+        <span style="padding-left: 14.2em">pesa</span>
+        <hr>
+        <span><strong>Total to be paid</strong></span> 
+        <span style="padding-left: 17.7em">pesa</span>
+    
+    </div>
+    
+    <button style="margin-left: 1px; border-radius: 12px" class="btn btn-info my-4 btn-block" type="submit" >Make Payment</button>
+                    
+      
+
+</div>
+</div>
+</div>
+    </div>
+
+<br>
+<br>
+
+{% endblock %}
+
+</body>
+
+</html>

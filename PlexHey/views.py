@@ -273,7 +273,7 @@ def bookings(request):
     days = request.POST['days']
     user = request.POST['user']
     amount = int((int(car_price)*int(days)))
-    lipa_na_mpesa(phonenumber,amount)
+    # lipa_na_mpesa(phonenumber,amount)
 
 
     add1 = booking(fullname=fullname,car_price=car_price,phonenumber=phonenumber,car_make1=car_make1,car_model1=car_model1,
@@ -281,6 +281,9 @@ def bookings(request):
 
 
     add1.save()
-    messages.success(request, ('Booking successful.We will contact you soon'))
+    # messages.success(request, ('Booking successful.We will contact you soon'))
 
-    return render(request, 'Hey_Plex/ShowCase.html', {})
+    return redirect('pay')
+
+def pay(request):
+    return render(request,'Hey_Plex/pay.html', {})
