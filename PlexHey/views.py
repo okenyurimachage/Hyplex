@@ -273,26 +273,19 @@ def bookings(request):
         days = request.POST['days']
         user = request.POST['user']
         amount = int((int(car_price)*int(days)))
-    # lipa_na_mpesa(phonenumber,amount)
+        # lipa_na_mpesa(phonenumber,amount)
 
 
         add1 = booking(fullname=fullname,car_price=car_price,phonenumber=phonenumber,car_make1=car_make1,car_model1=car_model1,
-                   pickupdate=pickupdate,days=days,amount=amount, user=user)
-
-
+                    pickupdate=pickupdate,days=days,amount=amount, user=user)
         add1.save()
         # messages.success(request, ('Booking successful.We will contact you soon'))
         # print('id')
-        return redirect('pay',bookings)
+        return redirect('bookingtable')
     return render(request, 'Hey_Plex/details1.html', {})
 
 def pay(request,pk):
-    # bookings =booking.objects.filter(user= request.user).filter(paid=False).order_by('-id')[:1]
-    book =booking.objects.filter(user= request.user).filter(paid=False).order_by('-id')[:1]
-    phonenumber=booking.objects.values_list('phonenumber').filter(user= request.user).filter(paid=False).order_by('-id')[:1]
-    amount = booking.objects.values_list('amount').filter(user= request.user).filter(paid=False).order_by('-id')[:1]
-    context = {'book':book,'phonenumber':phonenumber,'amount':amount}
+    the_booking =booking.objects.get(pk=pk) 
+    context = {'booking':the_booking}
     #lipa_na_mpesa(phonenumber,amount)
     return render(request,'Hey_Plex/pay.html', context)
-
-

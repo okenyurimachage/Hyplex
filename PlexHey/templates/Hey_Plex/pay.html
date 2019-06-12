@@ -327,7 +327,7 @@ body {
     
       </div>
     <div>
-         {% for booking in bookings %}   
+         
             <span>Price Per day</span> 
             <span style="padding-left: 19.0em">{{ booking.car_price }}</span><br>
             <span>Number of days booked</span> 
@@ -335,9 +335,9 @@ body {
             <hr>
             <span><strong>Total to be paid</strong></span> 
             <span style="padding-left: 17.7em">{{ booking.amount}}</span>
-        {% endfor %}
+    
         <span><strong>Phone Number</strong></span>
-        <span style="padding-left: 17.7em">{{phonenumber.phonenumber }}</span>
+        <span style="padding-left: 17.7em">{{booking.phonenumber }}</span>
 
 
     

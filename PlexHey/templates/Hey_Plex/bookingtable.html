@@ -249,8 +249,9 @@ body {
         <th scope="col">Vehicle Booked</th>
         <th scope="col">Days Booked</th>
         <th scope="col">Booking Date</th>
-          <th scope="col">View</th>
-          <th scope="col">Delete</th>
+        <th scope="col">View</th>
+        <th scope="col">Delete</th>
+        <th scope="col">Paid</th>
 
 
       </tr>
@@ -266,6 +267,14 @@ body {
         <td  style="font-family: 'Nunito'; font-size: 14px; ">{{ d.created_at }}</td>
       <td>
         <button type="button" class="btn  btn-outline-info btn-rounded btn-sm m-0 mimi" data-toggle="modal" data-target="#centralModalSm">View</button>
+      </td>
+      <td>
+          
+        {% if d.paid %}
+        <a href="{% url 'pay' d.id  %}" class="btn btn-success btn-rounded btn-sm m-0 mimi disabled">Pay</a>
+        {% else%}
+        <a href="{% url 'pay' d.id  %}" class="btn btn-danger btn-rounded btn-sm m-0 mimi">Pay</a>       
+        {% endif %}
       </td>
 <!-- Central Modal Small -->
 <div class="modal fade" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
