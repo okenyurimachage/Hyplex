@@ -34,6 +34,7 @@ class booking(models.Model):
     phonenumber = models.CharField(max_length=13, null=True, default=True)
     pickupdate = models.DateField(null=True)
     days = models.PositiveIntegerField()
+    amount = models.PositiveIntegerField(null=True)
     user = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
 

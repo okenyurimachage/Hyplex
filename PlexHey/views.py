@@ -277,7 +277,7 @@ def bookings(request):
 
 
     add1 = booking(fullname=fullname,car_price=car_price,phonenumber=phonenumber,car_make1=car_make1,car_model1=car_model1,
-                   pickupdate=pickupdate,days=days,user=user)
+                   pickupdate=pickupdate,days=days,amount=amount, user=user)
 
 
     add1.save()
