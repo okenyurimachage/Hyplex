@@ -327,13 +327,15 @@ body {
     
       </div>
     <div>
+            
         <span>Price Per day</span> 
-        <span style="padding-left: 19.0em">pesa</span><br>
+        <span style="padding-left: 19.0em">{{ booking.car_price }}</span><br>
         <span>Number of days booked</span> 
-        <span style="padding-left: 14.2em">pesa</span>
+        <span style="padding-left: 14.2em">{{booking.days}}</span>
         <hr>
         <span><strong>Total to be paid</strong></span> 
-        <span style="padding-left: 17.7em">pesa</span>
+        <span style="padding-left: 17.7em">{{ booking.amount}}</span>
+
     
     </div>
     
@@ -349,9 +351,7 @@ body {
 <br>
 <br>
 
-{% for booking in bookings %}
-    {{ booking.car_price }}
-{% endfor %}
+
 {% endblock %}
 
 </body>

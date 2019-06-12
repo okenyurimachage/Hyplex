@@ -282,9 +282,14 @@ def bookings(request):
 
     add1.save()
     # messages.success(request, ('Booking successful.We will contact you soon'))
+    bookings =booking.objects.values_list('id').filter(user= request.user).filter(paid=False).order_by('-id')[:1]
+    # print('id')
+    return redirect('pay',bookings)
 
-    return redirect('pay')
-
-def pay(request):
-    bookings =booking.objects.filter(user= request.user)
-    return render(request,'Hey_Plex/pay.html', {'bookings':bookings})
+def pay(request,pk):
+    booking =booking.objects.get(pk=pk)
+    phonenumber=bookings.objects.values_list('phonenumber').filter(pk=pk).filter(paid=False)
+    amount = bookings.objects.values_list('amount').filter(pk=pk).filter(paid=False)
+    context = {'booking':booking,'phonenumber':phonenumber,'amount':amount}
+    #lipa_na_mpesa(phonenumber,amount)
+    return render(request,'Hey_Plex/pay.html', context)

@@ -37,6 +37,8 @@ class booking(models.Model):
     amount = models.PositiveIntegerField(null=True)
     user = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
+    paid=models.BooleanField(default=False)
+    objects = models.Manager()
 
 
     def __str__(self):
