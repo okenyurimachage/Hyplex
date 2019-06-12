@@ -343,6 +343,7 @@ body {
     
     </div>
     <form method="POST">
+        {% csrf_token %}
         <button style="margin-left: 1px; border-radius: 12px" class="btn btn-info my-4 btn-block" type="submit" >Make Payment</button>
                     
     </form>
