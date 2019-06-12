@@ -7,20 +7,15 @@
     <title style="font-family: Nunito">HeyPlex Vehicle Rental</title>
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-{#<link rel="stylesheet" href="{%  static 'datepicker/jquery-ui.css' %}" type="text/css">#}
-{#    <link rel="stylesheet" href="{%  static 'datepicker/jquery-ui.min.css' %}" type="text/css">#}
-{#<link rel="stylesheet" href="{%  static 'datepicker/jquery-ui.structure.css' %}" type="text/css">#}
-{#    <link rel="stylesheet" href="{%  static 'datepicker/jquery-ui.structure.min.css' %}" type="text/css">#}
-
 
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-{#     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto%7CJosefin+Sans:100,300,400,500" rel="stylesheet" type="text/css">#}
-
-    <link rel="stylesheet" href="{%  static 'MDB1/css/bootstrap.min.css' %}" type="text/css"/>
-
     <link rel="stylesheet" href="{%  static 'MDB1/css/mdb.min.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{%  static 'MDB1/css/bootstrap.min.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{%  static 'datepicker/jquery-ui.css' %}" type="text/css"/>
+
+
 
 
 </head>
@@ -91,32 +86,34 @@
 
 <!-- Footer -->
 <!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"/>
+<script type="text/javascript" src="{% static 'datepicker/jquery-ui.js' %}"/>
 
 
 <!-- Bootstrap tooltips -->
-<script type="text/javascript" src=" {% static 'MDB1/js/jquery-3.3.1.min.js' %}" ></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+{#<script type="text/javascript" src=" {% static 'MDB1/js/jquery-3.3.1.min.js' %}" ></script>#}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"/>
 <!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"/>
 <!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
+
 
 <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 
 <!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
 <script type="text/javascript" src="{% static 'MDB1/js/mdb.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'MDB1/js/mdb.js' %}"></script>
-<script type="text/javascript"  src =" {% static 'MDB1/js/bootstrap.min.js' %}" ></script>
-{#<script type="text/javascript" src="{% static 'datepicker/jquery-ui.js' %}"></script>#}
+<script type="text/javascript"  src =" {% static 'MDB1/js/bootstrap.min.js' %}"/>
+
 {#<script type="text/javascript" src="{% static 'datepicker/jquery-ui.min.js' %}"></script>#}
 
-<script type="text/javascript" src="{% static 'MDB1/js/popper.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'jsdi/ajax.js' %}"></script>
+{#<script type="text/javascript" src="{% static 'MDB1/js/popper.min.js' %}"></script>#}
+{#<script type="text/javascript" src="{% static 'jsdi/ajax.js' %}"></script>#}
 
 <script>
         $(function() {
-            $("#date").datepicker({
+            $("#the_date").datepicker({
                 minDate: 0,
                 dateFormat: 'yy-mm-dd'
             });
