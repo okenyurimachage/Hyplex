@@ -135,10 +135,10 @@ class carAdmin(admin.ModelAdmin, ExportCsvMixin):
 admin.site.register(car,carAdmin)
 
 
-#
+
 class bookingAdmin(admin.ModelAdmin, ExportCsvMixin ):
-    list_display = ['fullname', 'phonenumber', 'car_make1', 'car_model1', 'pickupdate','car_price', 'days','user','created_at']
-    readonly_fields = ['fullname', 'phonenumber', 'car_make1', 'car_model1', 'pickupdate', 'car_price', 'days','user','created_at']
+    list_display = ['fullname', 'phonenumber', 'car_make1', 'car_model1', 'car_price', 'days','user','created_at']
+    readonly_fields = ['fullname', 'phonenumber', 'car_make1', 'car_model1',  'car_price', 'days','user','created_at']
     list_filter = ['created_at']
     search_fields = ['fullname']
     list_per_page = 10
