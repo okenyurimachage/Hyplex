@@ -263,28 +263,29 @@ def add_feedback_submission(request):
 
 
 def bookings(request):
-
-    fullname=request.POST['fullname']
-    car_price = request.POST['car_price']
-    car_make1 = request.POST['car_make1']
-    car_model1 = request.POST['car_model1']
-    phonenumber = request.POST['phonenumber']
-    pickupdate = request.POST['pickupdate']
-    days = request.POST['days']
-    user = request.POST['user']
-    amount = int((int(car_price)*int(days)))
+    if method == 'POST':
+        fullname=request.POST['fullname']
+        car_price = request.POST['car_price']
+        car_make1 = request.POST['car_make1']
+        car_model1 = request.POST['car_model1']
+        phonenumber = request.POST['phonenumber']
+        pickupdate = request.POST['pickupdate']
+        days = request.POST['days']
+        user = request.POST['user']
+        amount = int((int(car_price)*int(days)))
     # lipa_na_mpesa(phonenumber,amount)
 
 
-    add1 = booking(fullname=fullname,car_price=car_price,phonenumber=phonenumber,car_make1=car_make1,car_model1=car_model1,
+        add1 = booking(fullname=fullname,car_price=car_price,phonenumber=phonenumber,car_make1=car_make1,car_model1=car_model1,
                    pickupdate=pickupdate,days=days,amount=amount, user=user)
 
 
-    add1.save()
-    # messages.success(request, ('Booking successful.We will contact you soon'))
-    bookings =booking.objects.values_list('id').filter(user= request.user).filter(paid=False).order_by('-id')[:1]
-    # print('id')
-    return redirect('pay',bookings)
+         add1.save()
+        # messages.success(request, ('Booking successful.We will contact you soon'))
+        bookings =booking.objects.values_list('id').filter(user= request.user).filter(paid=False).order_by('-id')[:1]
+        # print('id')
+        return redirect('pay',bookings)
+    return render(request 'Hey_Plex/details1.html', {})
 
 def pay(request,pk):
     book =booking.objects.get(pk=pk)
