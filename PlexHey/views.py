@@ -280,12 +280,12 @@ def bookings(request):
                    pickupdate=pickupdate,days=days,amount=amount, user=user)
 
 
-         add1.save()
+        add1.save()
         # messages.success(request, ('Booking successful.We will contact you soon'))
         bookings =booking.objects.values_list('id').filter(user= request.user).filter(paid=False).order_by('-id')[:1]
         # print('id')
         return redirect('pay',bookings)
-    return render(request 'Hey_Plex/details1.html', {})
+    return render(request, 'Hey_Plex/details1.html', {})
 
 def pay(request,pk):
     book =booking.objects.get(pk=pk)
