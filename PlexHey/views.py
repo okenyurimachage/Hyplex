@@ -287,5 +287,12 @@ def bookings(request):
 def pay(request,pk):
     the_booking =booking.objects.get(pk=pk) 
     context = {'booking':the_booking}
-    #lipa_na_mpesa(phonenumber,amount)
+    data = booking.objects.values_list('phonenumber','amount').filter(id=pk)
+    phone = data.phonenumber
+    amount = data.amount
+    if request.method == 'POST':
+        # lipa_na_mpesa(phone,amount)
+        the_booking.paid = True
+        the_booking.save()
+        return redirect('bookingtable')
     return render(request,'Hey_Plex/pay.html', context)
