@@ -13,6 +13,7 @@ from django.shortcuts import render
 
 from mpesa.implementation.lipanampesa import lipa_na_mpesa
 from .documents import PostDocument
+from mpesa.models import LNMonline
 
 
 class CoupesListView(ListView):
@@ -288,8 +289,20 @@ def pay(request,booking_id,phone,amount):
     the_booking =booking.objects.get(pk=booking_id) 
     context = {'booking':the_booking}
     if request.method == 'POST':
-        # lipa_na_mpesa(phone,amount)
-        the_booking.paid = True
-        the_booking.save()
-        return redirect('bookingtable')
+        lipa_na_mpesa(phone,amount)
+        return redirect('verify', book_id = booking_id)
     return render(request,'Hey_Plex/pay.html', context)
+
+def verify(request, book_id):
+    if request.method == 'POST':
+        trans_id= request.POST.get('trans_id')
+        count = LNMonline.objects.values_list('Result_Code').filter(Mpesa_Receipt_Number = trans_id)
+        if count == 1:
+            the_booking =booking.objects.get(pk=book_id)
+            the_booking.paid = True
+            the_booking.save()
+            return redirect('bookingtable')
+        else:
+            #pass message of failed verification
+            return redirect('verify', book_id = book_id)
+    return render(request, 'Hey_Plex/verify.html', {})

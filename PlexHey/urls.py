@@ -39,6 +39,8 @@ urlpatterns = [
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(),  name='password_reset_confirm'),
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('pay/<booking_id>/<phone>/<amount>', views.pay, name="pay"),
+    path('pay/verify/<book_id>', views.verify, name="verify" ),
+    
 
 ]
 
