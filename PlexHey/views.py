@@ -284,8 +284,8 @@ def bookings(request):
         return redirect('bookingtable')
     return render(request, 'Hey_Plex/details1.html', {})
 
-def pay(request,pk,phone,amount):
-    the_booking =booking.objects.get(pk=pk) 
+def pay(request,booking_id,phone,amount):
+    the_booking =booking.objects.get(pk=booking_id) 
     context = {'booking':the_booking}
     if request.method == 'POST':
         # lipa_na_mpesa(phone,amount)
