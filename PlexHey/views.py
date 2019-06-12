@@ -286,4 +286,5 @@ def bookings(request):
     return redirect('pay')
 
 def pay(request):
-    return render(request,'Hey_Plex/pay.html', {})
+    bookings =booking.objects.filter(user= request.user)
+    return render(request,'Hey_Plex/pay.html', {'bookings':bookings})
