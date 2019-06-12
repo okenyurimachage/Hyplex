@@ -263,7 +263,7 @@ def add_feedback_submission(request):
 
 
 def bookings(request):
-    if method == 'POST':
+    if request.method == 'POST':
         fullname=request.POST['fullname']
         car_price = request.POST['car_price']
         car_make1 = request.POST['car_make1']
