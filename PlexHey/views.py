@@ -287,9 +287,11 @@ def bookings(request):
     return redirect('pay',bookings)
 
 def pay(request,pk):
-    booking =booking.objects.get(pk=pk)
-    phonenumber=bookings.objects.values_list('phonenumber').filter(pk=pk).filter(paid=False)
-    amount = bookings.objects.values_list('amount').filter(pk=pk).filter(paid=False)
-    context = {'booking':booking,'phonenumber':phonenumber,'amount':amount}
+    book =booking.objects.get(pk=pk)
+    phonenumber=booking.objects.values_list('phonenumber').filter(pk=pk).filter(paid=False)
+    amount = booking.objects.values_list('amount').filter(pk=pk).filter(paid=False)
+    context = {'book':book,'phonenumber':phonenumber,'amount':amount}
     #lipa_na_mpesa(phonenumber,amount)
     return render(request,'Hey_Plex/pay.html', context)
+
+
