@@ -8,7 +8,7 @@ urlpatterns = [
 
     path('Pickups/<int:pk>/', pickupDetailView.as_view(), name='details1'),
     path('Extras/<int:pk>/', extrasDetailView.as_view(), name='details1'),
-    path('end/',views.endsesssion,name='end')
+    path('end/',views.endsesssion,name='end'),
     path('Coupes/<int:pk>/',CoupesDetailView.as_view(), name='details1'),
     path('hatchback/<int:pk>/',HatchDetailView.as_view(), name='details1'),
     path('convertible/<int:pk>/', convertibleDetailView.as_view(), name='convertible'),
