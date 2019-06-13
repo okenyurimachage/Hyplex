@@ -1,7 +1,7 @@
 from . import views
 from django.urls import path
 from django.contrib.auth import views as auth_views
-from .views import endsession.pickupDetailView,pickupListView,extrasDetailView,extrasListView,CoupesListView,ShowCase,ShowDetail,CoupesDetailView,HatchListView,HatchDetailView,convertibleDetailView,convertibleListView,sedanDetailView,sedanListView,mpvDetailView,mpvListView,suvDetailView,suvListView,crossoverDetailView,crossoverListView
+from .views import endsession,pickupDetailView,pickupListView,extrasDetailView,extrasListView,CoupesListView,ShowCase,ShowDetail,CoupesDetailView,HatchListView,HatchDetailView,convertibleDetailView,convertibleListView,sedanDetailView,sedanListView,mpvDetailView,mpvListView,suvDetailView,suvListView,crossoverDetailView,crossoverListView
 
 
 urlpatterns = [
