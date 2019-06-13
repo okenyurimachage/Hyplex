@@ -292,7 +292,7 @@ body {
           </div>
           <div class="product-listing-content">
               <h4><b>{{ dan.car_model }}</b></h4>
-            <p class="list-price">Kshs {{ co.car_price }} Per Day</p>
+            <p class="list-price">Kshs {{ dan.car_price }} Per Day</p>
             <ul>
                 <li><i class="fa fa-calendar" aria-hidden="true"></i> {{dan.model_year}} model</li>
               <li><i class="fa fa-user" aria-hidden="true"></i> {{ dan.car_capacity }} seats</li>
@@ -314,6 +314,7 @@ body {
         <li style="list-style: none; "><strong>No Sedans Available right now.</strong></li>
 </div>
 {% endfor %}
+<br>
 </ul>
 
 <br>
