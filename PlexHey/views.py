@@ -97,6 +97,27 @@ class crossoverDetailView(DetailView):
     model = model1
     template_name = 'Hey_Plex/details1.html'
 
+class pickupListView(ListView):
+    template_name = 'Hey_Plex/pickups.html'
+    context_object_name = 'pickups'
+
+    def get_queryset(self):
+      return model1.objects.filter(car_make=26)
+
+class pickupDetailView(DetailView):
+    model = model1
+    template_name = 'Hey_Plex/details1.html'
+
+class extrasListView(ListView):
+    template_name = 'Hey_Plex/extras.html'
+    context_object_name = 'extras'
+
+    def get_queryset(self):
+      return model1.objects.filter(car_make=27)
+
+class extrasDetailView(DetailView):
+    model = model1
+    template_name = 'Hey_Plex/details1.html'
 
 
 def home(request):
