@@ -252,6 +252,7 @@ body {
           <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
           <!-- Button -->
           <form method="POST">
+            
               {% csrf_token %}
               <input type="text" class="form-control" name="trans_id"/>
              <input type="submit" value="verify" class="btn btn-primary">

@@ -324,6 +324,6 @@ def verify(request, book_id):
             the_booking.save()
             return redirect('bookingtable')
         else:
-            #pass message of failed verification
+            messages.success(request, ('Wrong transcation code'))
             return redirect('verify', book_id = book_id)
     return render(request, 'Hey_Plex/verify.html', {})
