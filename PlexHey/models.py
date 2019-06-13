@@ -9,7 +9,7 @@ class Profile(models.Model):
     Identification_Number = models.PositiveIntegerField(null=False)
     Age = models.PositiveIntegerField(null=False)
     Phone_Number = models.CharField(max_length=13, null=True, default=True)
-    Driving = models.PositiveIntegerField(null=False)
+    Driving_license = models.ImageField(upload_to='profile/', max_length=255, null=True,blank=True)
     image = models.ImageField(upload_to='profile/', max_length=255, null=True,blank=True)
 
     def __str__(self):

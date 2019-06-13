@@ -19,7 +19,7 @@ class EditProfileForm(UserChangeForm):
 class EditProfile(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('Identification_Number', 'Age', 'Driving', 'Phone_Number', 'image')
+        fields = ('Identification_Number', 'Age', 'Driving_license', 'Phone_Number', 'image')
 
 class PasswordForm(PasswordChangeForm):
         class Meta:
@@ -95,15 +95,14 @@ class SignUpForm(UserCreationForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('Identification_Number', 'Age', 'Driving', 'Phone_Number','image')
+        fields = ('Identification_Number', 'Age', 'Driving_license', 'Phone_Number','image')
 
 
         widgets = {
-
             'Identification_Number': forms.NumberInput(
                 attrs={'required': True, 'class': 'form-control', 'placeholder': 'Enter ID Number'}),
             'Age': forms.NumberInput(attrs={'required': True, 'class': 'form-control', 'placeholder': 'Enter Age'}),
-            'Driving': forms.NumberInput(
+            'Driving_license': forms.NumberInput(
                 attrs={'required': True, 'class': 'form-control', 'placeholder': 'Enter Driving license Number'}),
             'Phone_Number': forms.NumberInput(
                 attrs={'required': True, 'class': 'form-control', 'placeholder': 'Enter Phone Number'}),
