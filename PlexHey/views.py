@@ -147,6 +147,8 @@ def login_user(request):
 def details(request):
     return render(request,'Hey_Plex/details.html', {})
 
+def endsession(request):
+    return render(request,'Hey_Plex/end.html', {})
 
 def bookingtable(request):
     det = booking.objects.filter(user= request.user)
