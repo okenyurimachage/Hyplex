@@ -1,12 +1,13 @@
 from . import views
 from django.urls import path
 from django.contrib.auth import views as auth_views
-from .views import CoupesListView,ShowCase,ShowDetail,CoupesDetailView,HatchListView,HatchDetailView,convertibleDetailView,convertibleListView,sedanDetailView,sedanListView,mpvDetailView,mpvListView,suvDetailView,suvListView,crossoverDetailView,crossoverListView
+from .views import pickupDetailView,pickupListView,extrasDetailView,extrasListView,CoupesListView,ShowCase,ShowDetail,CoupesDetailView,HatchListView,HatchDetailView,convertibleDetailView,convertibleListView,sedanDetailView,sedanListView,mpvDetailView,mpvListView,suvDetailView,suvListView,crossoverDetailView,crossoverListView
 
 
 urlpatterns = [
 
-
+    path('Pickups/<int:pk>/', pickupDetailView.as_view(), name='details1'),
+    path('Extras/<int:pk>/', extrasDetailView.as_view(), name='details1'),
     path('search/', views.search),
     path('Coupes/<int:pk>/',CoupesDetailView.as_view(), name='details1'),
     path('hatchback/<int:pk>/',HatchDetailView.as_view(), name='details1'),
@@ -31,6 +32,8 @@ urlpatterns = [
     path('ShowCase/MPV/', mpvListView.as_view(), name='mpv'),
     path('ShowCase/SUV/', suvListView.as_view(), name='suv'),
     path('ShowCase/Crossover/', crossoverListView.as_view(), name='crossover'),
+    path('ShowCase/Pickups/', pickupListView.as_view(), name='pickups'),
+    path('ShowCase/Extras/', extrasListView.as_view(), name='extras'),
     path('bookingtable/', views.bookingtable, name='bookingtable'),
     path('add_form_submission/', views.add_feedback_submission, name='add_feedback_submission'),
     path('bookingdetails/', views.bookings, name='bookings'),
