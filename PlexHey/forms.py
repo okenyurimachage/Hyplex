@@ -102,7 +102,7 @@ class ProfileForm(forms.ModelForm):
             'Identification_Number': forms.NumberInput(
                 attrs={'required': True, 'class': 'form-control', 'placeholder': 'Enter ID Number'}),
             'Age': forms.NumberInput(attrs={'required': True, 'class': 'form-control', 'placeholder': 'Enter Age'}),
-            'Driving_license': forms.NumberInput(
+            'Driving_license': forms.FileInput(
                 attrs={'required': True, 'class': 'form-control', 'placeholder': 'Enter Driving license Number'}),
             'Phone_Number': forms.NumberInput(
                 attrs={'required': True, 'class': 'form-control', 'placeholder': 'Enter Phone Number'}),
