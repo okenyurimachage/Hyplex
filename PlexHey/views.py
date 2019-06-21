@@ -327,7 +327,7 @@ def verify(request, book_id):
             # if str(transaction) == str(required_code):
             the_booking.paid = True
             the_booking.save()
-            return redirect('bookingtable')
+            return redirect('end')
             # else:
             #     messages.success(request, ('Wrong transcation code'))
             #     return redirect('verify', book_id = book_id)
