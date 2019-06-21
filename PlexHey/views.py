@@ -319,18 +319,18 @@ def pay(request,booking_id,phone,amount):
 def verify(request, book_id):
     if request.method == 'POST':
         trans_id= request.POST.get('trans_id')
-        count = LNMonline.objects.values_list('Result_Code').filter(Mpesa_Receipt_Number = trans_id).count()
+        count = LNMonline.objects.values_list('Result_Code').filter(Mpesa_Receipt_Number = trans_id).filter(Result_Code=0).count()
         if count == 1:
-            transaction = LNMonline.objects.get(Mpesa_Receipt_Number=trans_id,Result_Code=0)
-            required_code = 0
-            if str(transaction) == str(required_code):
-                the_booking =booking.objects.get(pk=book_id)
-                the_booking.paid = True
-                the_booking.save()
-                return redirect('bookingtable')
-            else:
-                messages.success(request, ('Wrong transcation code'))
-                return redirect('verify', book_id = book_id)
+            # transaction = LNMonline.objects.get(Mpesa_Receipt_Number=trans_id,Result_Code=0)
+            # required_code = 0
+            the_booking =booking.objects.get(pk=book_id)
+            # if str(transaction) == str(required_code):
+            the_booking.paid = True
+            the_booking.save()
+            return redirect('bookingtable')
+            # else:
+            #     messages.success(request, ('Wrong transcation code'))
+            #     return redirect('verify', book_id = book_id)
         else:
             messages.success(request, ('Transaction ID do not match with any'))
             return redirect('verify', book_id = book_id)
