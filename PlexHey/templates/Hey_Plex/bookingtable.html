@@ -300,7 +300,7 @@ body {
       <td>
           
           {% if d.paid %}
-          <a href="{% url 'pay' d.id d.phonenumber d.amount  %}" class="btn btn-outline-info btn-rounded btn-sm m-0 mimi disabled">Paid For</a>
+          <a href="{% url 'pay' d.id d.phonenumber d.amount  %}" class="btn btn-outline-info btn-rounded btn-sm m-0 mimi disabled">Paid</a>
           {% else%}
           <a href="{% url 'pay' d.id d.phonenumber d.amount %}" class="btn btn-outline-danger btn-rounded btn-sm m-0 mimi">Pending payment</a>       
           {% endif %}
