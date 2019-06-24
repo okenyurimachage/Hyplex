@@ -274,17 +274,18 @@ def change_password (request):
     return render(request, 'Hey_Plex/change_password.html', context )
 
 def add_feedback_submission(request):
-    username =request.POST['username']
-    email= request.POST['email']
-    category = request.POST['category']
-    message = request.POST['message']
+    # if request.method == 'POST':
+        username =request.POST['username']
+        email= request.POST['email']
+        category = request.POST['category']
+        message = request.POST['message']
 
 
-    add_materials1 = feedback(username=username,email=email,category=category, message= message)
+        add_materials1 = feedback(username=username,email=email,category=category, message= message)
 
 
-    add_materials1.save()
-
+        add_materials1.save()
+        return render(request, 'Hey_Plex/feedback1.html', {})
 
 
 def bookings(request):
