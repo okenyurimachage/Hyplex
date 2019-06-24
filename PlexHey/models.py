@@ -76,5 +76,7 @@ class car(models.Model):
     car_model = models.ForeignKey(model1, on_delete=models.CASCADE)
     number_plate = models.CharField(max_length=100, null=False)
     assigned = models.BooleanField(null=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE,null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
+
