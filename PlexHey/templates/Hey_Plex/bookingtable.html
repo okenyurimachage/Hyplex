@@ -175,7 +175,7 @@ body {
 </style>
     <div class="container-fluid">
 <div class="row profile">
-<div class=" col-md-3">
+<div class=" col-md-3 animated fadeInLeft">
 			<div  style="height: 100%"  class="profile-sidebar">
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic">
@@ -264,9 +264,9 @@ body {
             <td>
           
           {% if d.paid %}
-          <a href="{% url 'pay' d.id d.phonenumber d.amount  %}" class="btn btn-outline-info btn-rounded btn-sm m-0 mimi disabled">Paid</a>
+          <a href="{% url 'pay' d.id d.phonenumber d.amount  %}" class="btn btn-info btn-rounded btn-sm m-0 mimi disabled">Paid</a>
           {% else%}
-          <a href="{% url 'pay' d.id d.phonenumber d.amount %}" class="btn btn-outline-danger btn-rounded btn-sm m-0 mimi">Pending payment</a>       
+          <a href="{% url 'pay' d.id d.phonenumber d.amount %}" class="btn btn-danger btn-rounded btn-sm m-0 mimi">Pending payment</a>       
           {% endif %}
         </td>
       </tr>
