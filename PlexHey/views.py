@@ -10,7 +10,9 @@ from django.core.paginator import Paginator
 from django.shortcuts import render
 from .filters import UserFilter
 from django.shortcuts import render
-
+from django.http import HttpResponse
+from django.views.generic import View
+from PlexHey.utils import render_to_pdf 
 from mpesa.implementation.lipanampesa import lipa_na_mpesa
 from .documents import PostDocument
 from mpesa.models import LNMonline
