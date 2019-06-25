@@ -5,7 +5,8 @@ from .views import endsession,pickupDetailView,pickupListView,extrasDetailView,e
 
 
 urlpatterns = [
-
+    
+    path('help/',views.help,name="help"),
     path('Pickups/<int:pk>/', pickupDetailView.as_view(), name='details1'),
     path('Extras/<int:pk>/', extrasDetailView.as_view(), name='details1'),
     path('end/',views.endsession,name='end'),

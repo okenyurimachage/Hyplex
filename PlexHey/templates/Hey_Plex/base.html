@@ -21,7 +21,13 @@
 </head>
 
 <body >
+<style>
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
 
+</style>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar ">
         <a class="navbar-brand font-weight-bold" style="font-family: 'Nunito';">
     <img src="{%  static 'images/pic2.png' %}" height="30" class="d-inline-block align-top"
@@ -37,11 +43,11 @@
                     <a class="nav-link dropdown-toggle font-weight-bold" id="navbarDropdownMenuLink" data-toggle="dropdown"
                       aria-haspopup="true" aria-expanded="false" style="color: black; font-size:16px;font-family: 'Nunito'">Need help?</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item " style="padding:1px 4px; color: black; font-size:13px;font-family: 'Nunito'">Contact us<br>+254702646220</a>
-                      <a class="dropdown-item  " href="#" style="padding:1px 4px;  color: black; font-size:15px;font-family: 'Nunito'">How to book?</a>
-                      <a class="dropdown-item  " href="#" style="padding:1px 4px; color: black; font-size:15px;font-family: 'Nunito'">Payment Policy</a>
+                      <a class="dropdown-item disabled" style="padding:1px 4px; color: black; font-size:13px;font-family: 'Nunito'">Contact us<br>+254702646220</a>
+                      <a class="dropdown-item" target="_blank" href="{% url 'help' %}" style="padding:1px 4px;  color: black; font-size:15px;font-family: 'Nunito'">More Assistance?</a>
+                      <!-- <a class="dropdown-item  " href="#" style="padding:1px 4px; color: black; font-size:15px;font-family: 'Nunito'">Payment Policy</a>
                         <a class="dropdown-item " href="#" style="padding:1px 4px; color: black; font-size:15px;font-family: 'Nunito'">Rental Terms</a>
-                        <a class="dropdown-item  " href="#" style="padding:1px 4px; color: black; font-size:15px;font-family: 'Nunito'">Send feedback</a>
+                        <a class="dropdown-item  " href="#" style="padding:1px 4px; color: black; font-size:15px;font-family: 'Nunito'">Send feedback</a> -->
                          </div>
                   </li>
 
@@ -49,12 +55,7 @@
                       <li  class="nav-item">
                     <a class="nav-link font-weight-bold" href="{% url 'details' %}" style="color: black; font-size:18px;font-family: 'Nunito'">Home</a>
                 </li>
-                <li  class="nav-item">
-                    <a class="nav-link font-weight-bold" href="{% url 'login' %}" style="color: black; font-size:18px; font-family: 'Nunito'">Login</a>
-                </li>
-                <li  class="nav-item">
-                    <a class="nav-link font-weight-bold" href="{% url 'signup' %}" style="color: black; font-size:18px; font-family: 'Nunito'">Signup</a>
-                </li>
+                
 
                 {% endif %}
             </ul>
@@ -86,7 +87,7 @@
 
 <!-- Footer -->
 <!-- JQuery -->
->
+
 <script type="text/javascript" src="{% static 'MDB1/js/jquery-3.3.1.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'MDB1/js/popper.min.js' %}"></script>
 <script type="text/javascript"  src =" {% static 'MDB1/js/bootstrap.min.js' %}" ></script>

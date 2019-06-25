@@ -36,7 +36,7 @@ class HatchListView(ListView):
     context_object_name = 'hatchback'
 
     def get_queryset(self):
-      return model1.objects.filter(car_make=2)
+      return model1.objects.filter(car_make=1)
 
 class HatchDetailView(DetailView):
     model = model1
@@ -124,6 +124,10 @@ class extrasDetailView(DetailView):
 def home(request):
     return render(request,'Hey_Plex/home.html', {})
 
+def help(request):
+    return render(request,'Hey_Plex/help.html', {})
+
+
 def login_user(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -190,16 +194,6 @@ def search(request):
 
         return render(request, 'Hey_Plex/ShowCase.html', {'carmake': carmake})
 
-# def search_title(request):
-#     if request.method == 'POST':
-#         search_text = request.POST['search_text']
-#     else:
-#         search_text = " "
-#
-#     make = make1.objects.filter(car_make__contains = search_text)
-#
-#
-#     return render(request, 'Hey_Plex/ajax_search.html', {'make': make})
 
 def logout_user(request):
     logout(request)
@@ -242,7 +236,7 @@ def edit_profile(request):
             p_form.save()
 
             messages.success(request, ('Profile changed successfully'))
-                # Redirect to a success page.
+                
             return redirect('ShowCase')
     else:
         form = EditProfileForm(instance=request.user)
