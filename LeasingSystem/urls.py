@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from PlexHey.views import logout_user
 
 urlpatterns = [
+    path('admin/logout/', logout_user),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', include('PlexHey.urls')),
