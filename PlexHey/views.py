@@ -36,7 +36,7 @@ class HatchListView(ListView):
     context_object_name = 'hatchback'
 
     def get_queryset(self):
-      return model1.objects.filter(car_make=1)
+      return model1.objects.filter(car_make=2)
 
 class HatchDetailView(DetailView):
     model = model1

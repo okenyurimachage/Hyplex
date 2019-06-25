@@ -26,4 +26,3 @@ urlpatterns = [
     path('', include('PlexHey.urls')),
     path('api/payments/', include('mpesa.api.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
