@@ -251,15 +251,15 @@ body {
             
               <hr>
     <!-- Quotation -->
-    <p><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci<i class="fas fa-quote-right"></i></p>
+    <p><i class="fas fa-quote-left"></i> Please enter correctly your transaction code so as to verify the payment made <i class="fas fa-quote-right"></i></p>
 
           </div>
           
-          <form method="POST">
+          <form style="margin-left: 450px" method="POST">
             
               {% csrf_token %}
               <input type="text" class="form-control" name="trans_id"/>
-             <input type="submit" value="verify" class="btn btn-primary">
+             <input type="submit" value="verify" class="btn btn-primary mimi">
           </form>
           
       
