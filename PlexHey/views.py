@@ -299,10 +299,12 @@ def bookings(request):
         days = request.POST['days']
         user = request.POST['user']
         amount = int((int(car_price)*int(days)))
+        code = 254
+        number_code = str(code)+str(phonenumber)
         # lipa_na_mpesa(phonenumber,amount)
 
 
-        add1 = booking(fullname=fullname,car_price=car_price,phonenumber=phonenumber,car_make1=car_make1,car_model1=car_model1,
+        add1 = booking(fullname=fullname,car_price=car_price,phonenumber=number_code,car_make1=car_make1,car_model1=car_model1,
                     pickupdate=pickupdate,days=days,amount=amount, user=user)
         add1.save()
         # messages.success(request, ('Booking successful.We will contact you soon'))
@@ -330,10 +332,8 @@ def verify(request, book_id):
             the_booking.paid = True
             the_booking.save()
             return redirect('end')
-            # else:
-            #     messages.success(request, ('Wrong transcation code'))
-            #     return redirect('verify', book_id = book_id)
+            
         else:
-            messages.success(request, ('Transaction ID do not match with any'))
+            messages.success(request, ('The Transaction ID entered does not match with any'))
             return redirect('verify', book_id = book_id)
     return render(request, 'Hey_Plex/verify.html', {})
