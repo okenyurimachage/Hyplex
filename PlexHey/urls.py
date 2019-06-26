@@ -5,7 +5,8 @@ from .views import endsession,pickupDetailView,pickupListView,extrasDetailView,e
 
 
 urlpatterns = [
-    
+
+    path('accounts/login/',views.login_user ),
     path('help1/',views.help1,name="help1"),
     path('help/',views.help,name="help"),
     path('Pickups/<int:pk>/', pickupDetailView.as_view(), name='details1'),

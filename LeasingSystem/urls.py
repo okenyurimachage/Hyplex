@@ -26,5 +26,5 @@ urlpatterns = [
     path('', include('PlexHey.urls')),
     path('api/payments/', include('mpesa.api.urls')),
     path('accounts/login/',login_user ),
-    # path('admn/help', )
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
