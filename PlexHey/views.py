@@ -127,6 +127,9 @@ def home(request):
 def help(request):
     return render(request,'Hey_Plex/help.html', {})
 
+def help1(request):
+    return render(request,'Hey_Plex/help1.html', {})
+
 
 def login_user(request):
     if request.method == 'POST':

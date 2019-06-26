@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <title>HeyPlex Vehicle Rental</title>
+
+     {% load static %}
+     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto%7CJosefin+Sans:100,300,400,500" rel="stylesheet" type="text/css">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="{%  static 'MDB1/css/bootstrap.min.css' %}" type="text/css"/>
+
+    <link rel="stylesheet" href="{%  static 'MDB1/css/mdb.min.css' %}" type="text/css"/>
+
+    <style>
+        .navbar {
+    background-color: transparent;
+}
+    </style>
+</head>
+<body  style="background-color: whitesmoke">
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+        <a class="navbar-brand font-weight-bold" style="color: black">
+    <img src="{%  static 'images/pic2.png' %}" height="45" class="d-inline-block align-top"
+      alt="HeyPLex logo"> HeyPlex
+  </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul    class="navbar-nav ml-auto">
+           <li  class="nav-item">
+                    <a class="nav-link font-weight-bold" href="{% url 'details' %}" style="color: black; font-family: Poppins"> Go back to Home</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+<div style="margin-left: 130px;width: 1200px; margin-top: 120px;">
+  <!--Accordion wrapper-->
+<div class="accordion md-accordion accordion-3 z-depth-1-half" id="accordionEx194" role="tablist"
+aria-multiselectable="true">
+
+<h2 class="text-center py-4 px-3">Welcome To Admin Online Help</h2>
+
+
+<!--Accordion wrapper-->
+<div class="accordion md-accordion accordion-1" id="accordionEx23" role="tablist"></div>
+    
+<div class="card">
+    <div class="card-header  z-depth-1" role="tab" id="heading96">
+      <h5 class="mb-0 py-1">
+        <a class=" font-weight-bold" data-toggle="collapse" href="#collapse96" aria-expanded="true"
+          aria-controls="collapse96">
+         How do i add a model?<i style="margin-left: 900px" class="fas fa-angle-down rotate-icon"></i>
+        </a>
+      </h5>
+    </div>
+    <div id="collapse96" class="collapse show" role="tabpanel" aria-labelledby="heading96"
+      data-parent="#accordionEx23">
+      <div class="card-body">
+        <div class="row my-4">
+          <div class="col-md-8">
+            <h2 class="font-weight-bold mb-3 black-text">Adding Process</h2>
+            <ul>
+                <li>Click on Models1</li>
+                <li> Proceed to add models </li>
+                <li>Fill the model which will be displayed</li>
+                <li>Save the form</li>
+                            </ul>
+          </div>
+          <div class="col-md-4 mt-3 pt-2">
+            <div class="view z-depth-1">
+              <img src="{%  static 'images/model.png' %}" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <div class="card">
+      <div class="card-header " role="tab" id="heading97">
+        <h5 class=" mb-0 py-1">
+          <a class="collapsed font-weight-bold " data-toggle="collapse" href="#collapse97"
+            aria-expanded="false" aria-controls="collapse97">
+            How do i know a client has paid?<i style="margin-left: 800px" class="fas fa-angle-down rotate-icon"></i>
+          </a>
+        </h5>
+      </div>
+      <div id="collapse97" class="collapse" role="tabpanel" aria-labelledby="heading97"
+        data-parent="#accordionEx23">
+        <div class="card-body">
+          <div class="row my-4">
+            <div class="col-md-8">
+              <h2 class="font-weight-bold mb-3 black-text">Payment</h2>
+              <p class=""> Check if the paid button for that specific booking has been clicked.If yes then the booking
+                  has been paid otherwise it has not been paid for yet.
+              </p>
+            </div>
+            <div class="col-md-4 mt-3 pt-2">
+              <div class="view z-depth-1">
+                <img src="{%  static 'images/paidd.png' %}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>        
+    <div class="card">
+      <div class="card-header " role="tab" id="heading98">
+        <h5 class=" mb-0 py-1">
+          <a class="collapsed font-weight-bold " data-toggle="collapse" href="#collapse98"
+            aria-expanded="false" aria-controls="collapse98">
+            How do i know the client coming for the car is the one who booked?<i style="margin-left: 485px" class="fas fa-angle-down rotate-icon"></i>
+          </a>
+        </h5>
+      </div>
+      <div id="collapse98" class="collapse" role="tabpanel" aria-labelledby="heading98"
+        data-parent="#accordionEx23">
+        <div class="card-body">
+          <div class="row my-4">
+            <div class="col-md-8">
+              <h2 class="font-weight-bold mb-3 black-text">Identification</h2>
+              <p class=""> Before a client is given a booked car, he/she must show an Identification card and license number card.
+                  The admin must check if it matches the one which was uploaded during signing up.  </p>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Accordion wrapper-->
+<!-- Accordion card -->
+</div>
+<!--/.Accordion wrapper-->
+</div>
+ <br>
+ <br>
+ <br>
+ <br>        
+<!-- Footer -->
+
+</body>
+<script type="text/javascript" src="{% static 'MDB1/js/jquery-3.3.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'MDB1/js/popper.min.js' %}"></script>
+<script type="text/javascript"  src =" {% static 'MDB1/js/bootstrap.min.js' %}" ></script>
+<script type="text/javascript" src="{% static 'datepicker/js/jquery-ui.js' %}"></script>
+
+
+
+
+
+</html>
