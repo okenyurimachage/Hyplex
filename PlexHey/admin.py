@@ -39,6 +39,7 @@ class feedbackAdmin(admin.ModelAdmin, ExportCsvMixin):
     readonly_fields = ['username', 'email', 'category', 'message', 'created_at', 'updated_at']
     list_filter = ['created_at','read']
     list_editable = ['read']
+    date_hierarchy = 'created_at'
     list_per_page = 10
 
     actions = ["export_as_csv"]
@@ -70,11 +71,14 @@ class ProfileInline(admin.StackedInline):
         can_delete = False
         verbose_name_plural = 'profile'
 
+        def has_add_permission(self, request):
+         return False
 
 # Define a new User admin
 class UserAdmin(BaseUserAdmin):
     inlines = (ProfileInline,)
-
+    def has_add_permission(self, request):
+         return False
 
 # Re-register UserAdmin
 
@@ -89,10 +93,13 @@ class make1Admin(admin.ModelAdmin, ExportCsvMixin):
 
    date_hierarchy = 'created_at'
    list_display = ['car_make','description','make_image','created_at','updated_at']
-   list_filter  = ['created_at']
+   list_filter  = ['car_make','created_at']
    search_fields = ['car_make']
 
    list_per_page = 10
+   
+   def has_add_permission(self, request):
+        return False
 
    actions = ["export_as_csv"]
 
@@ -107,9 +114,9 @@ admin.site.register(make1, make1Admin)
 
 class model1Admin(admin.ModelAdmin, ExportCsvMixin):
    list_display = [ 'car_model' , 'car_make', 'car_price', 'car_image', 'car_capacity','model_year','fuel_type', 'created_at', 'updated_at' ]
-   list_filter = ['created_at']
+   list_filter = ['car_make','created_at']
    search_fields = ['car_model']
-
+   date_hierarchy = 'created_at'
    list_per_page = 10
 
    actions = ["export_as_csv"]
@@ -125,13 +132,14 @@ admin.site.register(model1,model1Admin)
 class carAdmin(admin.ModelAdmin, ExportCsvMixin):
    list_display = [ 'car_make' , 'car_model','number_plate','assigned', 'created_at', 'updated_at' ]
    list_editable = ['assigned']
-   list_filter = ['created_at']
+   list_filter = ['number_plate','created_at']
    search_fields = ['number_plate']
-
+   date_hierarchy = 'created_at'
    list_per_page = 10
 
    actions = ["export_as_csv"]
 
+   
 admin.site.register(car,carAdmin)
 
 
@@ -139,8 +147,9 @@ admin.site.register(car,carAdmin)
 class bookingAdmin(admin.ModelAdmin, ExportCsvMixin ):
     list_display = ['fullname', 'phonenumber', 'car_make1', 'car_model1', 'pickupdate','car_price', 'days','amount','paid','user','created_at']
     readonly_fields = ['fullname', 'phonenumber', 'car_make1', 'car_model1', 'pickupdate', 'car_price', 'days','amount','paid','user','created_at']
-    list_filter = ['created_at']
+    list_filter = ['fullname','created_at']
     search_fields = ['fullname']
+    date_hierarchy = 'created_at'
     list_per_page = 10
 
     actions = ["export_as_csv"]
@@ -155,10 +164,10 @@ class LNMonlineAdmin(admin.ModelAdmin):
     list_display = ['Phone_Number', 'Mpesa_Receipt_Number', 'Amount', 'Transaction_Date',]
     readonly_fields = ['Merchant_Request_ID','Checkout_Request_ID','Result_Code','Result_Description',
                        'Phone_Number', 'Mpesa_Receipt_Number', 'Amount', 'Transaction_Date', ]
-    list_filter = ['Transaction_Date']
+    list_filter = ['Phone_Number','Transaction_Date']
 
     def has_add_permission(self, request):
         return False
-
+    actions = ["export_as_csv"]
 admin.site.register(booking,bookingAdmin)
 admin.site.register(LNMonline,LNMonlineAdmin)
