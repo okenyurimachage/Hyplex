@@ -25,6 +25,9 @@ class feedback(models.Model):
     read = models.BooleanField(null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
+    
+    def __str__(self):
+        return self.user.username
 
 class booking(models.Model):
     fullname = models.CharField(max_length=100)
@@ -79,4 +82,6 @@ class car(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
-
+    
+    def __str__(self):
+        return self.number_plate

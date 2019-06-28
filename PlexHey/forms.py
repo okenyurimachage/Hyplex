@@ -15,8 +15,7 @@ class EditProfileForm(UserChangeForm):
     def __init__(self, *args, **kwargs):
         super(EditProfileForm, self).__init__(*args, **kwargs)
 
-        self.fields[
-            'username'].help_text = '<span class="form-text text-muted"><small>Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</small></span>'
+        self.fields['username'].help_text = '<span class="form-text text-muted"><small>Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</small></span>'
 class EditProfile(forms.ModelForm):
     class Meta:
         model = Profile
@@ -71,7 +70,8 @@ class SignUpForm(UserCreationForm):
         super(SignUpForm, self).__init__(*args, **kwargs)
 
         self.fields['username'].widget.attrs['class'] = 'form-control'
-        # self.fields['username'].label = '<strong>"Username "</strong>'
+        self.fields['username'].widget.attrs['pattern'] = '[a-z]+'
+        # self.fields['username'].label = '<strong>"Username "</strong>'attrs={'class': 'form-control', 'pattern' : '[a-z]+', 'placeholder': 'Enter Last Name'}))
         self.fields['username'].widget.attrs['placeholder'] = 'Enter Username'
         self.fields[
             'username'].help_text = '<span class="form-text text-muted"><small>Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</small></span>'
