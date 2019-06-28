@@ -25,7 +25,7 @@ class ExportCsvMixin:
         for obj in queryset:
          row = writer.writerow([getattr(obj, field) for field in field_names])
         return response
-    export_as_csv.short_description = "Export Selected"
+    export_as_csv.short_description = "Print out Selected"
 
 
 admin.site.unregister(Group)
@@ -168,6 +168,8 @@ class LNMonlineAdmin(admin.ModelAdmin):
 
     def has_add_permission(self, request):
         return False
+
     actions = ["export_as_csv"]
+    
 admin.site.register(booking,bookingAdmin)
 admin.site.register(LNMonline,LNMonlineAdmin)
