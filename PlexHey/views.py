@@ -124,6 +124,9 @@ class extrasDetailView(DetailView):
 def home(request):
     return render(request,'Hey_Plex/home.html', {})
 
+def feeditback(request):
+    return render(request,'Hey_Plex/feeditback.html', {})
+
 def help(request):
     return render(request,'Hey_Plex/help.html', {})
 

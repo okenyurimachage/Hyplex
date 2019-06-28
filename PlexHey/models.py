@@ -8,7 +8,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     Identification_Number = models.PositiveIntegerField(null=False)
     Age = models.PositiveIntegerField(null=False)
-    Phone_Number = models.CharField(max_length=13, null=True, default=True)
+    # Phone_Number = models.CharField(min_length=10,max_length=13, null=True, default=True)
     Driving_license = models.ImageField(upload_to='profile/', max_length=255, null=True,blank=True)
     image = models.ImageField(upload_to='profile/', max_length=255, null=True,blank=True)
 

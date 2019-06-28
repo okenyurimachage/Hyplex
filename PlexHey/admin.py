@@ -37,7 +37,7 @@ admin.site.unregister(Group)
 class feedbackAdmin(admin.ModelAdmin, ExportCsvMixin):
     list_display = ['username', 'email', 'category' ,'message', 'read','created_at', 'updated_at']
     readonly_fields = ['username', 'email', 'category', 'message', 'created_at', 'updated_at']
-    list_filter = ['created_at','read']
+    list_filter = ['username','created_at','read']
     list_editable = ['read']
     date_hierarchy = 'created_at'
     list_per_page = 10

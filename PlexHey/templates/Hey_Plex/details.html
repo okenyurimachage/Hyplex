@@ -2360,56 +2360,20 @@ input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placehold
      </div>
 
       <div  id="contact" class="terms">
-        <div class="container">
+        <!-- <div class="container"> -->
           <div class="row">
             <div class="col-md-6">
               <div class="terms-content">
 
 
-<h1 style="font-family: 'Nunito', sans-serif" class="wow fadeInLeft" data-wow-delay="0.2s"><u>We value your feedback</u></h1><br>
-<div class="card" style=" width: 18rem;font-family: 'Nanum Gothic', sans-serif" >
-    <div class="card-body" style=" font-family: 'Nanum Gothic', sans-serif">
-                  <form method="POST" action="{% url 'add_feedback_submission' %}" class="wow fadeInLeft" data-wow-delay="0.4s" style="width: 500px; font-family: Poppins ">
-                      {% csrf_token %}
-
-{#                      <label for="exampleInputEmail1" style=" font-family: 'Nanum Gothic', sans-serif">Name:</label>#}
-   <input style=" font-family: 'Nanum Gothic', sans-serif" type="textfield" class="form-control"  name="username"  id="exampleInputUsername" placeholder="Enter Your Name"><br>
-{#                      <label for="exampleInputEmail1">Email Address</label>#}
-   <input style=" font-family: 'Nanum Gothic', sans-serif" type="email" class="form-control"  name="email"  id="exampleInputEmail1" placeholder="Enter Your Email"><br>
-{#                      <label for="Category-select">Subject</label><br>#}
-                      <select  style="width: 500px; font-family: 'Nanum Gothic', sans-serif"  class="form-control" name="category">
-        <option value="" selected disabled >Choose the feedback type</option>
-        <option value="Feedback" >General Feedback</option>
-        <option value="Perfomance" >Performance</option>
-        <option value="Software/Hardware Compatipility" >Software/Hardware Compatipility</option>
-        <option value="Report a bug">Report a bug</option>
-        <option value="Feature request">Feature request</option>
-        <option value="Any other">Any other</option>
-    </select><br><br>
-{#   <input type="textfield" class="form-control"  name="username"  id="exampleInputUsername" placeholder="Enter Username"><br><br>#}
-{#                      <label for="exampleInputEmail1">Your Message</label>#}
-{#           <div class="form-group">#}
-        <textarea style=" font-family: 'Nanum Gothic', sans-serif" name="message" class="form-control"  id="exampleFormControlTextarea2" rows="3" placeholder="Write your message"></textarea>
-{#    </div>#}
-                      <br>
-
-                      <button class="btn btn-info btn-block my-4" type="submit" style="width: 500px ;font-family: 'Nanum Gothic' ">Send</button>
-                  </form>
-</div>
-</div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <img class="img-responsive wow fadeInRight" data-wow-delay="0.3s" src="{%  static 'assets/images/car22.png' %}" alt="HeyPlex" />
-            </div>
           </div>
         </div>
       </div>
 
     <!-- Footer Section -->
         <div class="footer"  class="contact text-center">
-            <div class="container">
-            <div style="margin-left: 400px; line-height: 40px; font-family: Poppins; font-size: 16px">
+            <!-- <div class="container-fluid"> -->
+            <div style="margin-left: 700px; line-height: 40px; font-family: Poppins; font-size: 16px">
             <h1 style="font-size: 26px; font-family: 'Nunito', sans-serif" class="wow fadeInUp" data-wow-delay="0.1s" style="font-size: 26px;"><u>ADDRESS</u></h1>
                  <div  style=" font-family: 'Nanum Gothic', sans-serif" class="wow fadeInUp" data-wow-delay="0.2s">
                    <i  class="ion ion-home"></i>  P.O BOX 456-20100 Nakuru,Kenya<br>
@@ -2420,7 +2384,7 @@ input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placehold
                  </div>
             </div>
                 <hr style="display: block; margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 1px; " >
-                <div style=" margin-left: 270px; font-family: 'Nanum Gothic', sans-serif" class="wow fadeInRightBig footer2" data-wow-delay="0.3s">
+                <div style=" margin-left: 500px; font-family: 'Nanum Gothic', sans-serif" class="wow fadeInRightBig footer2" data-wow-delay="0.3s">
                     Copyright © 2019 HeyPlex Vehicle Rental. All Rights Reserved.
 
 
