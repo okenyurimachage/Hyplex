@@ -99,7 +99,7 @@ class make1Admin(admin.ModelAdmin, ExportCsvMixin):
    list_per_page = 10
    
    def has_add_permission(self, request):
-        return False
+        return True
 
    actions = ["export_as_csv"]
 

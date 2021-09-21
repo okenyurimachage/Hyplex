@@ -50,7 +50,7 @@ class booking(models.Model):
 class make1(models.Model):
     car_make = models.CharField(max_length=1000, null=False)
     description = models.TextField(max_length=1000, null=False)
-    make_image = models.ImageField()
+    make_image = models.ImageField(null= True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
